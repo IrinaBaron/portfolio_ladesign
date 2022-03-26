@@ -59,11 +59,11 @@ $color-priority: #777777;
 // $color-href: #333333;
 // $color-back: #4A4A4A;
 // $color-light-grey: #CACACA;
-// $color-gray: #999999;
+$color-grey: #878787;
 $color-light: #D5D5D5;
 $color-white: #FFFFFF;
 $color-hover-for-dark: #393246;
-// $color-active: #CE4307;
+$color-active: #4A415A;
 // $color-focus: #BC572B;
 
 
@@ -92,20 +92,6 @@ $color-hover-for-dark: #393246;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: $color-priority;
-}
-
-%href {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  display: block;
-  padding: 7px 15px;
-  font-family: 'Roboto';
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: $color-white;
-  // background-color: $color-href;
 }
 
 *,
@@ -150,25 +136,28 @@ button {
 .btn {
   display: inline-block;
   padding: 13px 20px;
-  font-family: 'Roboto';
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  color: $color-white;
-  border-radius: 0;
-  border: 3px solid transparent;
-  // background-color: $color-hover;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-hover-for-dark;
+  border: 1px solid $color-hover-for-dark;
+  background-color: $color-white;
   cursor: pointer;
-  transition: background-color .4s ease-in-out, border .4s ease-in-out;
-  // &:hover {
-  //   background-color: $color-focus;
-  // }
-  // &:active {
-  //   background-color: $color-active;
-  // }
-  // &.focus-visible {
-  //   border: 3px solid $color-active;
-  // }
+  transition: background-color .4s ease-in-out, color .4s ease-in-out, border .4s ease-in-out;
+  &:hover {
+    color: $color-white;
+    background-color: $color-hover-for-dark;
+  }
+  &:active {
+    color: $color-white;
+    background-color: $color-active;
+  }
+  &.focus-visible {
+    color: $color-white;
+    background-color: $color-hover-for-dark;
+  }
 }
 
 /* header  */
@@ -332,7 +321,7 @@ button {
 // -----------team-------------
 .team__container {
   padding-top: 150px;
-  padding-bottom: 109px;
+  padding-bottom: 75px;
   .team__title {
     @extend %title;
   }
@@ -440,11 +429,129 @@ button {
   }
 }
 
-
-
-
-// projects
-
+// -----------portfolio-----------
+.portfolio__container {
+  padding-top: 75px;
+  text-align: center;
+  .portfolio__title {
+    @extend %title;
+    margin-bottom: 56px;
+  }
+  .portfolio__btns {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    column-gap: 50px;
+    margin-bottom: 40px;
+    .btns-list__item {
+      .btns-list__btn {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: $color-grey;
+        background: none;
+        border: 1px solid transparent;
+        border-bottom: 1px solid $color-light;
+        @extend %transitionBorderBotom;
+        &:hover {
+          border-bottom: 1.5px solid #000000;
+        }
+        &.focus-visible {
+          border-color: $color-hover-for-dark;
+        }
+      }
+    }
+  }
+  .portfolio__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+    grid-template-rows: repeat(auto-fit,minmax(88px,1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    .portfolio__item {
+      .portfolio__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .item1 {
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+    .item2 {
+      grid-column: 3/5;
+      grid-row: 1/2;
+    }
+    .item3 {
+      grid-column: 5/7;
+      grid-row: 1/2;
+    }
+    .item4 {
+      grid-column: 7/9;
+      grid-row: 1/2;
+    }
+    .item5 {
+      grid-column: 3/5;
+      grid-row: 2/3;
+    }
+    .item6 {
+      grid-column: 5/9;
+      grid-row: 2/4;
+    }
+    .item7 {
+      grid-column: 1/5;
+      grid-row: 3/4;
+    }
+    .item8 {
+      grid-column: 1/3;
+      grid-row: 4/5;
+    }
+    .item9 {
+      grid-column: 3/5;
+      grid-row: 4/5;
+    }
+    .item10 {
+      grid-column: 5/9;
+      grid-row: 4/5;
+    }
+    .item11 {
+      grid-column: 1/3;
+      grid-row: 5/7;
+    }
+    .item12 {
+      grid-column: 3/5;
+      grid-row: 5/6;
+    }
+    .item13 {
+      grid-column: 5/7;
+      grid-row: 5/6;
+    }
+    .item14 {
+      grid-column: 7/9;
+      grid-row: 5/6;
+    }
+    .item15 {
+      grid-column: 3/5;
+      grid-row: 6/7;
+    }
+    .item16 {
+      grid-column: 5/9;
+      grid-row: 6/8;
+    }
+    .item17 {
+      grid-column: 1/5;
+      grid-row: 7/8;
+    }
+    .portfolio__btn {
+      padding: 22px 54px;
+    }
+  }
+}
 
 
 // contacts
