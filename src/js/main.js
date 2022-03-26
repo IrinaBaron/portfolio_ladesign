@@ -24,60 +24,90 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.header__search').classList.remove('active')
       document.querySelector('body').classList.toggle('lock');
     })
-    // about
+
+
+    // -------------team
+    let accBtns = document.querySelectorAll('.team__btn');
+    let conts = document.querySelectorAll('.team__content');
+    let accIcons = document.querySelectorAll('.course-program__icons');
+    document.body.addEventListener('click', e => {
+      console.log(e.target);
+    })
+    accBtns.forEach(accBtn => {
+      accBtn.addEventListener('click', e => {
+        
+        // console.log(e.target.nextElementSibling);
+        // console.log(e.target.parentNode.nextElementSibling);
+        if (e.target.closest('.show')) {
+          e.target.classList.remove('show');
+          e.target.nextElementSibling.classList.remove('show');
+          // e.target.parentNode.previousElementSibling.classList.remove('show');
+        } else {
+          for (let i = 0; i < accBtns.length; i++) {
+            if (accBtns[i].classList.contains('show')) {
+              accBtns[i].classList.remove('show');
+              conts[i].classList.remove('show');
+              // accIcons[i].classList.remove('show');
+            }
+          }
+          e.target.classList.toggle('show');
+          e.target.nextElementSibling.classList.toggle('show'); 
+          // e.target.parentNode.previousElementSibling.classList.toggle('show')
+        }
+      })
+      return
+      })
 
     // form__map
-    let closeInfo = document.querySelector('.contacts__close');
+    // let closeInfo = document.querySelector('.contacts__close');
 
-    closeInfo.addEventListener('click', function () {
-      document.querySelector('.contacts__info.active').classList.remove('active');
-    })
+    // closeInfo.addEventListener('click', function () {
+    //   document.querySelector('.contacts__info.active').classList.remove('active');
+    // })
 
     //form__input
 
-    const nameDiv = document.querySelector('.contacts__form-text');
-    const emailDiv = document.querySelector('.contacts__form-email');
+    // const nameDiv = document.querySelector('.contacts__form-text');
+    // const emailDiv = document.querySelector('.contacts__form-email');
 
-    let input = document.querySelector('.contacts__input');
-    let nameInput = document.querySelector('.name');
-    let emailInput = document.querySelector('.email');
-    let btn = document.querySelector('.contacts__form-btn');
-    let aboutBtn = document.querySelector('.form__btn');
-    let aboutInput = document.querySelector('.form__text');
+    // let input = document.querySelector('.contacts__input');
+    // let nameInput = document.querySelector('.name');
+    // let emailInput = document.querySelector('.email');
+    // let btn = document.querySelector('.contacts__form-btn');
+    // let aboutBtn = document.querySelector('.form__btn');
+    // let aboutInput = document.querySelector('.form__text');
 
-    let mailformat = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    let simbol = /^[а-яА-ЯёЁ\s]+$/;
-    let div = document.createElement('div');
-    let div1 = document.createElement('div');
-    let div2 = document.createElement('div');
+    // let mailformat = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    // let simbol = /^[а-яА-ЯёЁ\s]+$/;
+    // let div = document.createElement('div');
+    // let div1 = document.createElement('div');
+    // let div2 = document.createElement('div');
 
 
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      let validName = validateName();
-      let validEmail = validateEmail();
-      // if(!validName && !validEmail) {
-      //   return
-      // }
-    })
+    // btn.addEventListener('click', function (e) {
+    //   e.preventDefault();
+    //   let validName = validateName();
+    //   let validEmail = validateEmail();
+      
+    // })
 
-    aboutBtn.addEventListener('click', function (e) {
-      e.preventDefault();
+    // aboutBtn.addEventListener('click', function (e) {
+    //   e.preventDefault();
 
-      div2.classList.add('validate');
-      document.querySelector('.about__form').append(div2);
-      if (aboutInput.value == '') {
-        div2.innerHTML = 'Введите email';
-        aboutInput.style.borderColor = '#F06666';
-      } else if (aboutInput.value.match(mailformat)) {
-        div2.innerHTML = '';
-        aboutInput.style.borderColor = 'transparent';
-        // return true
-      } else if (!aboutInput.value.match(mailformat)) {
-        div2.innerHTML = 'Недопустимый формат';
-        aboutInput.style.borderColor = '#F06666';
-      }
-    })
+    //   div2.classList.add('validate');
+    //   document.querySelector('.about__form').append(div2);
+    //   if (aboutInput.value == '') {
+    //     div2.innerHTML = 'Введите email';
+    //     aboutInput.style.borderColor = '#F06666';
+    //   } else if (aboutInput.value.match(mailformat)) {
+    //     div2.innerHTML = '';
+    //     aboutInput.style.borderColor = 'transparent';
+    //     // return true
+    //   } else if (!aboutInput.value.match(mailformat)) {
+    //     div2.innerHTML = 'Недопустимый формат';
+    //     aboutInput.style.borderColor = '#F06666';
+    //   }
+    // })
 
     function validateName() {
       div.classList.add('validate');
