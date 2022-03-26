@@ -232,32 +232,33 @@ h1 {
 .hero {
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  background-image: url("../images/hero/hero.png");
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.6) 100%, #FFFFFF 50%), url("../images/hero/hero.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-color: black;
 }
 
 .hero__container {
-  grid-auto-flow: column;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: row;
   -ms-grid-columns: (minmax(116px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
   -ms-grid-rows: (minmax(120px, 1fr))[auto-fit];
       grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
   row-gap: 30px;
-  padding-top: 165px;
-  padding-bottom: 302px;
-  text-align: center;
+  height: 800px;
 }
 
 .hero__container .hero__title {
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 3;
-  grid-column: 4/7;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 6;
+  grid-column: 3/9;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   font-weight: 300;
   font-size: 140px;
   line-height: 164px;
@@ -268,14 +269,15 @@ h1 {
 }
 
 .hero__container .hero__span {
-  display: inline-block;
-  max-width: 635px;
   -ms-grid-column: 4;
-  -ms-grid-column-span: 3;
-  grid-column: 4/7;
+  -ms-grid-column-span: 4;
+  grid-column: 4/8;
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  max-width: 635px;
   font-weight: 300;
   font-size: 20px;
   line-height: 27px;
