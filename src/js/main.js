@@ -58,7 +58,35 @@ document.addEventListener('DOMContentLoaded', () => {
       return
       })
 
-    // form__map
+    // -------------portfolio
+    let elements = document.querySelectorAll('.portfolio__item');
+
+    document.querySelector('.num-all').textContent = elements.length;
+    let apparts = document.querySelectorAll('.appart');
+    document.querySelector('.num-appart').textContent = apparts.length;
+    let houses = document.querySelectorAll('.home');
+    document.querySelector('.num-home').textContent = houses.length;
+    let commercial = document.querySelectorAll('.commerc');
+    document.querySelector('.num-commerc').textContent = commercial.length;
+    const btnShowMore = document.querySelector('.portfolio__btn');
+
+    function hideElements() {
+      for (let i = 10; i < elements.length; i++) {
+        let elem = elements[i];
+        elem.style.display = 'none';
+      }
+      return
+    }
+    hideElements();
+
+    btnShowMore.addEventListener('click', e => {
+      elements.forEach(elem => {
+        elem.style.display = 'block'
+      })
+    })
+
+
+
     // let closeInfo = document.querySelector('.contacts__close');
 
     // closeInfo.addEventListener('click', function () {
