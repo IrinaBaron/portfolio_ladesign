@@ -51,9 +51,9 @@ html body {
   overflow-y: auto;
 }
 
-.nav__list .nav__link, .header__wrap .header__phone-hero, .portfolio__container .portfolio__btns .btns-list__item .btns-list__btn {
-  -webkit-transition: border-color .4s ease-in-out;
-  transition: border-color .4s ease-in-out;
+.nav__list .nav__link, .header__wrap .header__phone-hero, .portfolio__container .portfolio__btns .btns-list__item .btns-list__btn, .portfolio__container .portfolio__application .portfolio__btn-applic {
+  -webkit-transition: border-color .4s ease-in-out, color .4s ease-in-out;
+  transition: border-color .4s ease-in-out, color .4s ease-in-out;
 }
 
 .team__container .team__title, .portfolio__container .portfolio__title {
@@ -461,6 +461,7 @@ button {
 
 .portfolio__container {
   padding-top: 75px;
+  padding-bottom: 130px;
   text-align: center;
 }
 
@@ -673,7 +674,40 @@ button {
   grid-row: 7/8;
 }
 
-.portfolio__container .portfolio__list .portfolio__btn {
+.portfolio__container .portfolio__btn {
+  margin-bottom: 130px;
   padding: 22px 54px;
+}
+
+.portfolio__container .portfolio__application .portfolio__btn-applic {
+  padding-right: 31px;
+  height: auto;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777777;
+  border: 2px solid transparent;
+  border-bottom: 1px solid #D5D5D5;
+  background-image: url("../images/icons/arrow-up-right.svg");
+  background-position: right top 16px;
+  background-repeat: no-repeat;
+  -webkit-transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
+  transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
+}
+
+.portfolio__container .portfolio__application .portfolio__btn-applic:hover {
+  color: #393246;
+  border-bottom: 2px solid #393246;
+  background-color: #FFFFFF;
+  background-image: url("../images/icons/hover_arrow-up-right.svg");
+}
+
+.portfolio__container .portfolio__application .portfolio__btn-applic.focus-visible {
+  color: #393246;
+  border: 2px solid #393246;
+  background-color: #FFFFFF;
+  background-image: url("../images/icons/hover_arrow-up-right.svg");
 }
 /*# sourceMappingURL=style.css.map */
