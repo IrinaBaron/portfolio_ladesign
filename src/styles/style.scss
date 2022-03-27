@@ -81,7 +81,7 @@ $color-active: #4A415A;
 }
 
 %transitionBorderBotom {
-  transition: border-color .4s ease-in-out;
+  transition: border-color .4s ease-in-out, color .4s ease-in-out;
 }
 
 %title {
@@ -432,6 +432,7 @@ button {
 // -----------portfolio-----------
 .portfolio__container {
   padding-top: 75px;
+  padding-bottom: 130px;
   text-align: center;
   .portfolio__title {
     @extend %title;
@@ -547,9 +548,43 @@ button {
       grid-column: 1/5;
       grid-row: 7/8;
     }
-    .portfolio__btn {
-      padding: 22px 54px;
+  }
+  .portfolio__btn {
+    margin-bottom: 130px;
+    padding: 22px 54px;
+  }
+  .portfolio__application {
+    .portfolio__btn-applic {
+      padding-right: 31px;
+      height: auto;
+      font-weight: 300;
+      font-size: 40px;
+      line-height: 47px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $color-priority;
+      border: 2px solid transparent;
+      border-bottom: 1px solid $color-light;
+      background-image: url('../images/icons/arrow-up-right.svg');
+      background-position: right top 16px;
+      background-repeat: no-repeat;
+      transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
+      @extend %transitionBorderBotom;
+      &:hover {
+        color: $color-hover-for-dark;
+        border-bottom: 2px solid $color-hover-for-dark;
+        background-color: $color-white;
+        background-image: url('../images/icons/hover_arrow-up-right.svg');
+      }
+      &.focus-visible {
+        color: $color-hover-for-dark;
+        border: 2px solid $color-hover-for-dark;
+        background-color: $color-white;
+        background-image: url('../images/icons/hover_arrow-up-right.svg');
+      }
+
     }
+
   }
 }
 
