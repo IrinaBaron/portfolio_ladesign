@@ -27,32 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // -------------team
-    let accBtns = document.querySelectorAll('.team__btn');
-    let conts = document.querySelectorAll('.team__content');
-    let accIcons = document.querySelectorAll('.course-program__icons');
-    document.body.addEventListener('click', e => {
-      console.log(e.target);
-    })
-    accBtns.forEach(accBtn => {
-      accBtn.addEventListener('click', e => {
-        
-        // console.log(e.target.nextElementSibling);
-        // console.log(e.target.parentNode.nextElementSibling);
+    let teamBtns = document.querySelectorAll('.team__btn');
+    let contents = document.querySelectorAll('.team__content');
+
+    // document.body.addEventListener('click', e => {
+    //   console.log(e.target);
+    // })
+    teamBtns.forEach(btn => {
+      btn.addEventListener('click', e => {
         if (e.target.closest('.show')) {
           e.target.classList.remove('show');
           e.target.nextElementSibling.classList.remove('show');
-          // e.target.parentNode.previousElementSibling.classList.remove('show');
         } else {
-          for (let i = 0; i < accBtns.length; i++) {
-            if (accBtns[i].classList.contains('show')) {
-              accBtns[i].classList.remove('show');
-              conts[i].classList.remove('show');
-              // accIcons[i].classList.remove('show');
+          for (let i = 0; i < teamBtns.length; i++) {
+            if (teamBtns[i].classList.contains('show')) {
+              teamBtns[i].classList.remove('show');
+              contents[i].classList.remove('show');
             }
           }
           e.target.classList.toggle('show');
           e.target.nextElementSibling.classList.toggle('show'); 
-          // e.target.parentNode.previousElementSibling.classList.toggle('show')
         }
       })
       return
@@ -81,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnShowMore.addEventListener('click', e => {
       elements.forEach(elem => {
-        elem.style.display = 'block'
+        elem.style.display = 'block';
       })
     })
 
@@ -176,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnScroll = document.querySelector('.btn__scroll');
     window.addEventListener('scroll', () => {
       let scrollNum = window.pageYOffset;
+      // console.log(scrollNum)
       document.querySelector('.footer__go');
       document.querySelector('.footer__link_logo');
       if (scrollNum >= '100') {
@@ -187,10 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         btnScroll.style.display = 'none';
       }
+      if(scrollNum >= 750) {
+        document.querySelector('.header').classList.add('color-header');
+      } else {
+        document.querySelector('.header').classList.remove('color-header');
+      }
 
     }, { passive: true })
 
-    let links = document.querySelectorAll('.hero__link');
+    let links = document.querySelectorAll('.nav__link');
 
     links.forEach(link => {
       link.addEventListener('click', () => {
