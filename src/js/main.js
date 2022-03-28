@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let elements = document.querySelectorAll('.portfolio__item');
 
     document.querySelector('.num-all').textContent = elements.length;
-    let apparts = document.querySelectorAll('.appart');
-    document.querySelector('.num-appart').textContent = apparts.length;
+    let aparts = document.querySelectorAll('.apart');
+    document.querySelector('.num-appart').textContent = aparts.length;
     let houses = document.querySelectorAll('.home');
     document.querySelector('.num-home').textContent = houses.length;
     let commercial = document.querySelectorAll('.commerc');
@@ -72,6 +72,45 @@ document.addEventListener('DOMContentLoaded', () => {
       return
     }
     hideElements();
+
+    let btnsShowAll = document.querySelectorAll('.btns-list__btn');
+
+    btnsShowAll.forEach(btn => {
+      btn.addEventListener('click', e => {
+        elements.forEach(elem => {
+          elem.style.display = 'none';
+        })
+        if (e.target.classList.contains('apart-elems')) {
+          let aparts = document.querySelectorAll('.apart');
+          aparts.forEach(apart => {
+            apart.style.display = 'block';
+          })
+          return
+        }
+        if (e.target.classList.contains('home-elems')) {
+          let houses = document.querySelectorAll('.home');
+          houses.forEach(house => {
+            house.style.display = 'block';
+          })
+          return
+        }
+        if (e.target.classList.contains('commerc-elems')) {
+          let elems = document.querySelectorAll('.commerc');
+          elems.forEach(elem => {
+            elem.style.display = 'block';
+          })
+          return
+        }
+        if (e.target.classList.contains('all-elems')) {
+          elements.forEach(elem => {
+            elem.style.display = 'block';
+          })
+          hideElements();
+          return
+        }
+        // let elems = document.querySelectorAll(`.${direct}`);
+      })
+    })
 
     btnShowMore.addEventListener('click', e => {
       elements.forEach(elem => {
