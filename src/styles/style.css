@@ -51,7 +51,7 @@ html body {
   overflow-y: auto;
 }
 
-.portfolio__container .portfolio__list .portfolio__item .portfolio__hover .portfolio__hover-subtitle, .portfolio__container .portfolio__list .portfolio__item .portfolio__hover .portfolio__hover-info {
+.portfolio__container .portfolio__list .portfolio__item .portfolio__hover .portfolio__hover-subtitle, .portfolio__container .portfolio__list .portfolio__item .portfolio__hover .portfolio__hover-info, .portfolio__modal .portfolio__modal-content .menu__close {
   -webkit-transition: opacity .4s ease-in-out;
   transition: opacity .4s ease-in-out;
 }
@@ -145,6 +145,24 @@ button {
 .btn.focus-visible {
   color: #FFFFFF;
   background-color: #393246;
+}
+
+.btn-color {
+  color: #FFFFFF;
+  background-color: #393246;
+}
+
+.btn-color:hover, .btn-color.focus-visible {
+  background-color: #4A415A;
+}
+
+.btn-color:active {
+  background-color: #63557C;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow-y: hidden;
 }
 
 /* header  */
@@ -837,6 +855,181 @@ button {
   border: 2px solid #393246;
   background-color: #FFFFFF;
   background-image: url("../images/icons/hover_arrow-up-right.svg");
+}
+
+.portfolio__modal {
+  position: absolute;
+  top: -1000px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  z-index: 1000;
+  opacity: 0;
+  -webkit-transition: visibility .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out;
+  transition: visibility .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out;
+}
+
+.portfolio__modal .portfolio__modal-content {
+  position: relative;
+  margin: auto;
+  padding: 50px;
+  max-width: 800px;
+  background: #FFFFFF;
+}
+
+.portfolio__modal .portfolio__modal-content .menu__close {
+  position: absolute;
+  top: -35px;
+  right: 15px;
+  width: 21px;
+  height: 21px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.portfolio__modal .portfolio__modal-content .menu__close:hover {
+  opacity: 1;
+}
+
+.portfolio__modal .portfolio__modal-content .menu__close .menu__close-span {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #FFFFFF;
+}
+
+.portfolio__modal .portfolio__modal-content .menu__close .close1 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.portfolio__modal .portfolio__modal-content .menu__close .close2 {
+  -webkit-transform: rotate(45deg) translate(-13px, -13px);
+          transform: rotate(45deg) translate(-13px, -13px);
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-title {
+  margin-bottom: 40px;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input {
+  padding-bottom: 10px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #777777;
+  max-width: 335px;
+  width: 100%;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input::-webkit-input-placeholder {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #878787;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input:-ms-input-placeholder {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #878787;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input::-ms-input-placeholder {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #878787;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input::placeholder {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #878787;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-btn {
+  display: block;
+  margin-right: 34px;
+  padding: 22px 57px;
+  padding-right: 83px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background-image: url("../images/icons/white_arrow-up-right.svg");
+  background-position: right 57px center;
+  background-repeat: no-repeat;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-span,
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-link {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 309px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #878787;
+  text-align: left;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-span .portfolio__modal-link,
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-link .portfolio__modal-link {
+  color: #878787;
+  border-bottom: 1px solid #878787;
+  -webkit-transition: border-color .4s ease-in-out, color .4s ease-in-out;
+  transition: border-color .4s ease-in-out, color .4s ease-in-out;
+}
+
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-span .portfolio__modal-link:hover,
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-link .portfolio__modal-link:hover {
+  color: #393246;
+  border-color: #393246;
+}
+
+.modal_active {
+  position: fixed;
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility .4s ease-in-out,left .4s ease-in-out,opacity .4s ease-in-out;
+  transition: visibility .4s ease-in-out,left .4s ease-in-out,opacity .4s ease-in-out;
 }
 
 .footer {

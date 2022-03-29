@@ -64,6 +64,8 @@ $color-light: #D5D5D5;
 $color-white: #FFFFFF;
 $color-hover-for-dark: #393246;
 $color-active: #4A415A;
+$color-hover-btn: #4A415A;
+$color-active-btn: #63557C;
 // $color-focus: #BC572B;
 
 
@@ -162,6 +164,23 @@ button {
     color: $color-white;
     background-color: $color-hover-for-dark;
   }
+}
+
+.btn-color {
+  color: $color-white;
+  background-color: $color-hover-for-dark;
+  &:hover,
+  &.focus-visible {
+    background-color: $color-hover-btn;
+  }
+  &:active {
+    background-color: $color-active-btn;
+  }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow-y: hidden;
 }
 
 /* header  */
@@ -690,10 +709,130 @@ button {
         background-color: $color-white;
         background-image: url('../images/icons/hover_arrow-up-right.svg');
       }
-
+      
     }
 
   }
+}
+
+.portfolio__modal {
+  position: absolute;
+  top: -1000px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-y: scroll;
+  background: rgba(0,0,0,.6);
+  visibility: hidden;
+  z-index: 1000;
+  opacity: 0;
+  transition: visibility .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out;
+  .portfolio__modal-content {
+    position: relative;
+    margin: auto;
+    padding: 50px;
+    max-width: 800px;
+    background: $color-white;
+    .menu__close {
+      position: absolute;
+      top: -35px;
+      right: 15px;
+      width: 21px;
+      height: 21px;
+      opacity: 0.6;
+      cursor: pointer;
+      @extend %transitionOpacity;
+      &:hover {
+        opacity: 1;
+      }
+      .menu__close-span {
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background-color: $color-white;
+      }
+      .close1 {
+        transform: rotate(-45deg);
+      }
+      .close2 {
+        transform: rotate(45deg) translate(-13px,-13px);
+      }
+    }
+    .portfolio__modal-title {
+      margin-bottom: 40px;
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 45px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $color-priority;
+    }
+    .portfolio__modal-wrap {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      .portfolio__modal-input {
+        padding-bottom: 10px;
+        border: 1px solid transparent;
+        border-bottom: 1px solid $color-priority;
+        max-width: 335px;
+        width: 100%;
+        &::placeholder {
+          font-family: 'Roboto';
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: $color-grey;
+        }
+      }
+    }
+    .portfolio__modal-box {
+      display: flex;
+      .portfolio__modal-btn {
+        display: block;
+        margin-right: 34px;
+        padding: 22px 57px;
+        padding-right: 83px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        background-image: url('../images/icons/white_arrow-up-right.svg');
+        background-position: right 57px center;
+        background-repeat: no-repeat;
+      }
+      .portfolio__modal-span,
+      .portfolio__modal-link {
+        align-self: center;
+        max-width: 309px;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 15px;
+        color: $color-grey;
+        text-align: left;
+        .portfolio__modal-link {
+          color: $color-grey;
+          border-bottom: 1px solid $color-grey;
+          transition: border-color .4s ease-in-out, color .4s ease-in-out;
+          &:hover {
+            color: $color-hover-for-dark;
+            border-color: $color-hover-for-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal_active {
+  position: fixed;
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility .4s ease-in-out,left .4s ease-in-out,opacity .4s ease-in-out;
 }
 
 
