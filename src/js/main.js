@@ -119,6 +119,20 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
+    //--------------modal-----------------
+    const clickModal = document.querySelector('.portfolio__btn-applic');
+    const modal = document.querySelector('.portfolio__modal');
+
+    clickModal.addEventListener('click', () => {
+      modal.classList.add('modal_active');
+      document.body.classList.add('stop-scrolling');
+    });
+
+    let closeModal = document.querySelector('.portfolio__modal .menu__close');
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('modal_active');
+      document.body.classList.remove('stop-scrolling');
+    });
 
     // let closeInfo = document.querySelector('.contacts__close');
 
