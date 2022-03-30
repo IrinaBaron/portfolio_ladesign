@@ -111,7 +111,7 @@ button {
 }
 
 .container {
-  padding: 68px 15px;
+  padding: 60px 15px;
   margin: 0 auto;
   max-width: 1230px;
 }
@@ -190,7 +190,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px 15px;
+  padding: 20px 15px;
   gap: 30px;
 }
 
@@ -227,16 +227,8 @@ button {
 
 .header .header__container .header__nav {
   -ms-grid-column: 3;
-  -ms-grid-column-span: 4;
-  grid-column: 3/7;
-}
-
-.header .header__container .header__nav .header__phone {
-  position: absolute;
-  top: -1000px;
-  left: -100%;
-  -webkit-transition: top .9s ease-in-out;
-  transition: top .9s ease-in-out;
+  -ms-grid-column-span: 3;
+  grid-column: 3/6;
 }
 
 .header__burger {
@@ -291,17 +283,15 @@ button {
 }
 
 .header__wrap {
-  -ms-grid-column: 7;
-  -ms-grid-column-span: 2;
-  grid-column: 7/9;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 3;
+  grid-column: 6/9;
   text-align: end;
 }
 
 .header__wrap .header__phone-hero {
   padding-left: 35px;
   height: auto;
-  font-family: 'Roboto_condensed';
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
@@ -324,6 +314,10 @@ button {
 .header__wrap .header__phone-hero.focus-visible {
   border-color: #FFFFFF;
   background-image: url("../images/icons/hover_phone_white.svg");
+}
+
+.header.color-header .header__container {
+  padding: 20px 15px;
 }
 
 .header.color-header .header__logo .header__logo-link {
@@ -370,6 +364,7 @@ button {
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.6) 100%, #FFFFFF 50%), url("../images/hero/hero.png");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero__container {
@@ -549,6 +544,7 @@ button {
   -ms-grid-column-span: 2;
   grid-column: 3/5;
   justify-self: flex-end;
+  width: 100%;
 }
 
 .portfolio__container {
