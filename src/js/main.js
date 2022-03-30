@@ -7,22 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerBtn.addEventListener('click', function () {
       burgerBtn.classList.toggle('active');
       document.querySelector('.header__nav').classList.toggle('active');
-      document.querySelector('.contacts__phone').classList.toggle('active')
+      // document.querySelector('.contacts__phone').classList.toggle('active')
       // document.querySelector('body').classList.toggle('lock');
-    })
-
-    const searchBtn = document.querySelector('.search__btn');
-
-    searchBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector('.header__search').classList.toggle('active');
-      document.querySelector('body').classList.toggle('lock');
-    })
-
-    const searchClose = document.querySelector('.search__span');
-    searchClose.addEventListener('click', function () {
-      document.querySelector('.header__search').classList.remove('active')
-      document.querySelector('body').classList.toggle('lock');
     })
 
 
@@ -84,7 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
           let aparts = document.querySelectorAll('.apart');
           aparts.forEach(apart => {
             apart.style.display = 'block';
+            
           })
+          // document.querySelector('.item4').style.gridColumn = '5/7';
           return
         }
         if (e.target.classList.contains('home-elems')) {
@@ -106,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             elem.style.display = 'block';
           })
           hideElements();
+          // document.querySelector('.item4').style.gridColumn = '7/9';
           return
         }
         // let elems = document.querySelectorAll(`.${direct}`);
@@ -223,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnScroll = document.querySelector('.btn__scroll');
     window.addEventListener('scroll', () => {
       let scrollNum = window.pageYOffset;
-      // console.log(scrollNum)
+      console.log(scrollNum)
       document.querySelector('.footer__go');
       document.querySelector('.footer__link_logo');
       if (scrollNum >= '100') {

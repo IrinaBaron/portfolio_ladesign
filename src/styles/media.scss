@@ -1,0 +1,106 @@
+$color-priority: #777777;
+$color-back: #F7F7F7;
+$color-grey: #878787;
+$color-light: #D5D5D5;
+$color-white: #FFFFFF;
+$color-hover-for-dark: #393246;
+$color-active: #4A415A;
+$color-hover-btn: #4A415A;
+$color-active-btn: #63557C;
+@media (max-width: 1225px) and (min-width: 1024px) {
+  .header {
+    .header__container {
+      grid-template-columns: repeat(auto-fit, minmax(99px, 1fr));
+      gap: 20px;
+      .header__nav {
+        grid-column: 3/7;
+      }
+      .header__wrap {
+        grid-column: 7/9;
+      }
+    }
+  }
+
+  .hero__container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding-top: 90px;
+    height: 600px;
+  }
+
+  .team__container {
+    .team__wrap {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+    .team__box {
+      max-width: 440px;
+    }
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 728px) {
+  .container {
+    padding: 60px 45px;
+  }
+  .header {
+    .header__container {
+      position: relative;
+      grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+      padding: 31px 45px 29px 45px;
+      .header__logo {
+        grid-column: 1/2;
+        order: 1;
+      }
+      .header__nav {
+        display: none;
+        position: absolute;
+        top: 0;
+        grid-column: auto;
+        padding: 12px 27px;
+        width: 100%;
+        height: 600px;
+        background: rgba(0, 0, 0, 0.96);
+        .nav__list {
+          grid-auto-flow: row;
+          position: absolute;
+          top: -1000px;
+          left: -100%;
+          transition: top .9s ease-in-out;
+        }
+        &.active {
+          display: block;
+          .nav__list {
+            top: 47px;
+            left: 21px;
+            z-index: 10;
+          }
+        }
+      }
+      .header__burger {
+        grid-column: 6/7;
+        order: 3;
+      }
+      .header__wrap {
+        grid-column: 2/6;
+        order: 2;
+      }
+    }
+  }
+  .header__burger {
+    display: block;
+    justify-self: flex-end;
+    .burger__span {
+      display: block;
+      width: 40px;
+      height: 3px;
+      background-color: $color-white;
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+  }
+  
+
+  .portfolio__container .portfolio__list {
+    grid-template-columns: repeat(auto-fit, minmax(49px, 1fr));
+  }
+}
