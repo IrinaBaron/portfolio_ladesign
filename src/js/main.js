@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerBtn.addEventListener('click', function () {
       burgerBtn.classList.toggle('active');
       document.querySelector('.header__nav').classList.toggle('active');
-      // document.querySelector('.contacts__phone').classList.toggle('active')
-      // document.querySelector('body').classList.toggle('lock');
+      document.body.classList.toggle('stop-scrolling');
     })
 
 

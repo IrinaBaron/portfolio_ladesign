@@ -49,55 +49,99 @@ $color-active-btn: #63557C;
       .header__logo {
         grid-column: 1/2;
         order: 1;
+        z-index: 10;
       }
       .header__nav {
-        display: none;
         position: absolute;
-        top: 0;
+        top: -1000px;
         grid-column: auto;
         padding: 12px 27px;
         width: 100%;
         height: 600px;
         background: rgba(0, 0, 0, 0.96);
+        transition: height .7s ease-in-out, background-color .7s ease-in-out, top .7s ease-in-out;
         .nav__list {
+          display: grid;
           grid-auto-flow: row;
           position: absolute;
           top: -1000px;
           left: -100%;
-          transition: top .9s ease-in-out;
+          transition: top .7s ease-in-out, left .7s ease-in-out;
         }
         &.active {
-          display: block;
+          top: 0;
           .nav__list {
-            top: 47px;
-            left: 21px;
+            top: 42%;
+            left: 42%;
+            text-align: center;
             z-index: 10;
+            .nav__item {
+              &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 19px;
+              }
+            }
           }
         }
       }
       .header__burger {
+        display: block;
+        justify-self: flex-end;
         grid-column: 6/7;
         order: 3;
+        z-index: 10;
+        .burger__span {
+          display: block;
+          width: 40px;
+          height: 3px;
+          background-color: $color-white;
+          transition: transform .4s ease-in-out;
+          &:not(:last-child) {
+            margin-bottom: 7px;
+          }
+        }
+        &.active {
+          .menu1 {
+            width: 26px;
+            margin-bottom: 0;
+            transform: rotate(-45deg) translate(-12px,-1px);
+          }
+          .menu2 {
+            transform: scale(0);
+          }
+          .menu3 {
+            width: 26px;
+            margin-bottom: 0;
+            transform: rotate(45deg) translate(-10px,3px);
+          }
+        }
       }
       .header__wrap {
         grid-column: 2/6;
         order: 2;
+        z-index: 10;
       }
     }
   }
-  .header__burger {
-    display: block;
-    justify-self: flex-end;
-    .burger__span {
-      display: block;
-      width: 40px;
-      height: 3px;
-      background-color: $color-white;
-      &:not(:last-child) {
-        margin-bottom: 7px;
+  .header.color-header {
+    .header__container {
+      .header__nav {
+        &.active {
+          .nav__list {
+            .nav__link {
+              color: $color-white;
+            }
+          }
+        }
+        
+      }
+      .header__burger {
+        .burger__span {
+          background-color: $color-priority;
+        }
       }
     }
-  }
+  } 
   
 
   .portfolio__container .portfolio__list {
