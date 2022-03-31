@@ -570,6 +570,7 @@ button {
 }
 
 .portfolio__container .portfolio__btns .btns-list__item .btns-list__btn {
+  padding: 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
