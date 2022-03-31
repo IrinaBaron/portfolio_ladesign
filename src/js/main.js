@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerBtn.addEventListener('click', function () {
       burgerBtn.classList.toggle('active');
       document.querySelector('.header__nav').classList.toggle('active');
+      document.querySelector('.header').classList.toggle('active');
       document.body.classList.toggle('stop-scrolling');
     })
 

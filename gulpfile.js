@@ -44,7 +44,7 @@ const resources = () => {
 }
 
 const styles = async () => {
-  return src(['src/styles/normalize.css','src/styles/style.scss','src/styles/*.scss'])
+  return src(['src/styles/normalize.css','src/styles/style.scss','src/styles/*.scss','src/styles/media.scss'])
     .pipe(pkg2.init())
     .pipe(pkg2.write())
     .pipe(sass().on('error', sass.logError))
