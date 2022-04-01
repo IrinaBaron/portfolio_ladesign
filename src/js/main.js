@@ -50,14 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.num-commerc').textContent = commercial.length;
     const btnShowMore = document.querySelector('.portfolio__btn');
 
-    function hideElements() {
-      for (let i = 10; i < elements.length; i++) {
+    function hideElements(value) {
+      for (let i = value; i < elements.length; i++) {
         let elem = elements[i];
         elem.style.display = 'none';
       }
       return
     }
-    hideElements();
+    hideElements(10);
+
+    if (document.documentElement.clientWidth <= 767) {
+      hideElements(7);
+    }
 
     let btnsShowAll = document.querySelectorAll('.btns-list__btn');
 
