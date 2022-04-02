@@ -1,15 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    // burger-menu 
+    // ----------burger-menu 
 
     const burgerBtn = document.querySelector('.header__burger')
 
-    burgerBtn.addEventListener('click', function () {
+    burgerBtn.addEventListener('click', clickBurger);
+    burgerBtn.addEventListener('keyup', (e) => {
+      if (e.code == 'Enter') {
+        clickBurger();
+        return
+      }
+    });
+
+    function clickBurger() {
       burgerBtn.classList.toggle('active');
       document.querySelector('.header__nav').classList.toggle('active');
       document.querySelector('.header').classList.toggle('active');
       document.body.classList.toggle('stop-scrolling');
-    })
+    }
 
 
     // -------------team
