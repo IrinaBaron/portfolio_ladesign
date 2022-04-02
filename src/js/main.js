@@ -228,11 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         btnScroll.style.display = 'none';
       }
-      if(scrollNum >= 750) {
-        document.querySelector('.header').classList.add('color-header');
-      } else {
-        document.querySelector('.header').classList.remove('color-header');
-      }
+      createScroll(750, scrollNum);
+      if (document.documentElement.clientWidth <= 1225) {
+        createScroll(550, scrollNum);
+      };
+      if (document.documentElement.clientWidth <= 1023) {
+        createScroll(430, scrollNum);
+      };
 
     }, { passive: true })
 
@@ -244,6 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
+    function createScroll(num, scrollNum) {
+      if(scrollNum >= num) {
+        document.querySelector('.header').classList.add('color-header');
+      } else {
+        document.querySelector('.header').classList.remove('color-header');
+      }
+    }
 
   } catch (error) {
     console.log(error)
