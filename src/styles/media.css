@@ -69,6 +69,7 @@
     position: absolute;
     top: -1000px;
     left: -100%;
+    right: 0;
     visibility: hidden;
     text-align: center;
     -webkit-transition: top .7s ease-in-out, left .7s ease-in-out, visibility .4s ease-in-out;
@@ -84,12 +85,17 @@
   }
   .header .header__container .header__nav.active .nav__list {
     top: 42%;
-    left: 42%;
+    left: 0;
+    right: 0;
     text-align: center;
     visibility: visible;
     z-index: 10;
   }
+  .header .header__container .header__nav.active .nav__list .nav__link.focus-visible {
+    border-color: #FFFFFF;
+  }
   .header .header__container .header__burger {
+    position: relative;
     display: block;
     justify-self: flex-end;
     -ms-grid-column: 6;
@@ -99,6 +105,18 @@
         -ms-flex-order: 3;
             order: 3;
     z-index: 10;
+  }
+  .header .header__container .header__burger::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    bottom: -5px;
+    left: -4px;
+    border: 1px solid transparent;
+  }
+  .header .header__container .header__burger.focus-visible::before {
+    border-color: #F7F7F7;
   }
   .header .header__container .header__burger .burger__span {
     display: block;
@@ -116,6 +134,13 @@
   }
   .header .header__container .header__burger .burger__span:not(:last-child) {
     margin-bottom: 7px;
+  }
+  .header .header__container .header__burger.active.focus-visible::before {
+    top: -5px;
+    right: 18px;
+    bottom: -8px;
+    left: -12px;
+    border-color: #F7F7F7;
   }
   .header .header__container .header__burger.active .menu1 {
     width: 26px;
@@ -145,6 +170,9 @@
   .header.color-header .header__burger .burger__span {
     background-color: #777777;
   }
+  .header.color-header .header__burger.focus-visible::before {
+    border-color: #393246;
+  }
   .header.color-header.active .header__container .header__logo .header__logo-link:first-child {
     display: inline-block;
     opacity: 1;
@@ -159,6 +187,9 @@
   .header.color-header.active .header__container .header__wrap .header__phone-hero {
     color: #FFFFFF;
     background-image: url("../images/icons/icon_phon.svg");
+  }
+  .header.color-header.active .header__container .header__wrap .header__phone-hero.focus-visible {
+    border-color: #FFFFFF;
   }
   .header.color-header.active .header__container .header__burger .burger__span {
     background-color: #FFFFFF;
@@ -354,7 +385,7 @@
   }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 767px) {
   .container {
     padding-left: 15px;
     padding-right: 14px;
@@ -370,10 +401,6 @@
   }
   .header .header__container .header__nav.active {
     left: 0;
-  }
-  .header .header__container .header__nav.active .nav__list {
-    top: 184px;
-    left: 100px;
   }
   .header__wrap .header__phone-hero {
     font-size: 16px;
@@ -409,6 +436,32 @@
     font-size: 16px;
     line-height: 24px;
   }
+  .portfolio__container .portfolio__btns {
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .portfolio__container .portfolio__btns .btns-list__item .btns-list__btn {
+    font-size: 12px;
+  }
+  .portfolio__container .portfolio__list {
+    gap: 20px;
+  }
+  .portfolio__container .portfolio__application .portfolio__btn-applic {
+    padding: 5px 35px 6px 4px;
+    font-size: 24px;
+    line-height: 27px;
+    background-position: right 9px top 5px;
+    background-size: 20px;
+  }
+  .portfolio__modal .portfolio__modal-content {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 570px) {
   .team__container {
     position: relative;
     padding-bottom: 290px;
@@ -606,13 +659,6 @@
   .portfolio__container .portfolio__btn {
     margin-bottom: 70px;
     padding: 22px 51px 22px 54px;
-  }
-  .portfolio__container .portfolio__application .portfolio__btn-applic {
-    padding: 5px 35px 6px 4px;
-    font-size: 16px;
-    line-height: 19px;
-    background-position: right 9px top 5px;
-    background-size: 20px;
   }
   .portfolio__modal .portfolio__modal-content {
     padding: 15px 13px 15px 15px;

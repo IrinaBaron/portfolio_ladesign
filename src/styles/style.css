@@ -106,10 +106,6 @@ button {
   cursor: pointer;
 }
 
-.lock {
-  overflow: hidden;
-}
-
 .container {
   padding: 60px 15px;
   margin: 0 auto;
@@ -209,6 +205,11 @@ button {
   background-repeat: no-repeat;
   text-decoration: none;
   z-index: 1000;
+}
+
+.header .header__container .btn__scroll.focus-visible {
+  border-color: #393246;
+  background-color: rgba(57, 50, 70, 0.5);
 }
 
 .header .header__container .header__logo {
@@ -508,6 +509,14 @@ button {
   transition: border-color .4s ease-in-out, -webkit-transform .4s ease-in-out;
   transition: border-color .4s ease-in-out, transform .4s ease-in-out;
   transition: border-color .4s ease-in-out, transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+}
+
+.team__container .team__box .team__list .team__item .team__btn.focus-visible {
+  color: #393246;
+}
+
+.team__container .team__box .team__list .team__item .team__btn.focus-visible::after {
+  border-color: #393246;
 }
 
 .team__container .team__box .team__list .team__item:hover {
