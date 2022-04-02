@@ -219,10 +219,14 @@ button {
 
 .header .header__container .header__logo .header__logo-link {
   display: inline-block;
+  opacity: 1;
+  -webkit-transition: display .4s ease-in-out, opacity .4s ease-in-out;
+  transition: display .4s ease-in-out, opacity .4s ease-in-out;
 }
 
 .header .header__container .header__logo .logo-visible {
   display: none;
+  opacity: 0;
 }
 
 .header .header__container .header__nav {
@@ -238,16 +242,6 @@ button {
 .header__logo-link .header__logo-img {
   width: 45px;
   height: 45px;
-}
-
-.header__search {
-  display: none;
-}
-
-.header__search .search__btn {
-  border: none;
-  background: none;
-  cursor: pointer;
 }
 
 .nav__list {
@@ -322,10 +316,12 @@ button {
 
 .header.color-header .header__logo .header__logo-link {
   display: none;
+  opacity: 0;
 }
 
 .header.color-header .header__logo .logo-visible {
   display: inline-block;
+  opacity: 1;
 }
 
 .header.color-header .header__nav .nav__list .nav__link {
@@ -885,13 +881,18 @@ button {
   top: -35px;
   right: 15px;
   width: 21px;
-  height: 21px;
+  height: 29px;
   opacity: 0.6;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 
 .portfolio__modal .portfolio__modal-content .menu__close:hover {
   opacity: 1;
+}
+
+.portfolio__modal .portfolio__modal-content .menu__close.focus-visible {
+  border-color: #F7F7F7;
 }
 
 .portfolio__modal .portfolio__modal-content .menu__close .menu__close-span {
@@ -944,7 +945,7 @@ button {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #878787;
+  color: #ADADAD;
 }
 
 .portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input:-ms-input-placeholder {
@@ -952,7 +953,7 @@ button {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #878787;
+  color: #ADADAD;
 }
 
 .portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input::-ms-input-placeholder {
@@ -960,7 +961,7 @@ button {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #878787;
+  color: #ADADAD;
 }
 
 .portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input::placeholder {
@@ -968,7 +969,7 @@ button {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #878787;
+  color: #ADADAD;
 }
 
 .portfolio__modal .portfolio__modal-content .portfolio__modal-box {
