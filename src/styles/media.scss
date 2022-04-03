@@ -80,6 +80,7 @@ $color-active-btn: #63557C;
           visibility: hidden;
           text-align: center;
           transition: top .7s ease-in-out, left .7s ease-in-out, visibility .4s ease-in-out;
+
           .nav__item {
             &:not(:last-child) {
               margin-right: 0;
@@ -91,6 +92,7 @@ $color-active-btn: #63557C;
         &.active {
           top: 0;
           left: 0;
+
           .nav__list {
             top: 42%;
             left: 0;
@@ -98,6 +100,7 @@ $color-active-btn: #63557C;
             text-align: center;
             visibility: visible;
             z-index: 10;
+
             .nav__link {
               &.focus-visible {
                 border-color: $color-white;
@@ -114,21 +117,9 @@ $color-active-btn: #63557C;
         grid-column: 6/7;
         order: 3;
         z-index: 10;
-        &::before {
-          content: '';
-          position: absolute;
-          top: -5px;
-          right: -4px;
-          bottom: -5px;
-          left: -4px;
-          border: 1px solid transparent;
-        }
-        &.focus-visible {
-          &::before {
-            border-color: $color-back;
-          }
-        }
+
         .burger__span {
+          position: relative;
           display: block;
           width: 40px;
           height: 3px;
@@ -141,18 +132,31 @@ $color-active-btn: #63557C;
 
           transition: background-color .4s ease-in-out,
           transform .4s ease-in-out;
+
         }
 
-        &.active {
+        .menu3 {
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: -26px;
+            right: -4px;
+            bottom: -5px;
+            left: -4px;
+            border: 1px solid transparent;
+          }
+
           &.focus-visible {
-            &::before {
-              top: -5px;
-              right: 18px;
-              bottom: -8px;
-              left: -12px;
+            &::after {
               border-color: $color-back;
             }
           }
+        }
+
+        &.active {
+
           .menu1 {
             width: 26px;
             margin-bottom: 0;
@@ -167,6 +171,20 @@ $color-active-btn: #63557C;
             width: 26px;
             margin-bottom: 0;
             transform: rotate(45deg) translate(-10px, 3px);
+            z-index: 100;
+
+            &.focus-visible {
+              &::after {
+                top: -16px;
+                right: -2px;
+                bottom: -15px;
+                left: -2px;
+                border-color: $color-white;
+                z-index: 10;
+                transform: rotate(45deg);
+                z-index: 100;
+              }
+            }
           }
         }
       }
@@ -183,12 +201,17 @@ $color-active-btn: #63557C;
     .header__burger {
       .burger__span {
         background-color: $color-priority;
+        z-index: 100;
       }
-      &.focus-visible {
-        &::before {
-          border-color: $color-hover-for-dark;
+
+      .menu3 {
+        &.focus-visible {
+          &::after {
+            border-color: $color-hover-for-dark;
+          }
         }
       }
+
     }
   }
 
@@ -222,15 +245,23 @@ $color-active-btn: #63557C;
         .header__phone-hero {
           color: $color-white;
           background-image: url('../images/icons/icon_phon.svg');
+
           &.focus-visible {
             border-color: $color-white;
           }
         }
       }
 
-      .header__burger {
+      .header__burger.active {
+
         .burger__span {
           background-color: $color-white;
+
+          &.focus-visible {
+            &::before {
+              border-color: $color-white;
+            }
+          }
         }
       }
     }
@@ -394,17 +425,20 @@ $color-active-btn: #63557C;
       display: flex;
       justify-content: space-between;
       padding: 20px 15px;
+
       .header__nav.active {
         left: 0;
       }
     }
   }
+
   .header__wrap {
     .header__phone-hero {
       font-size: 16px;
       line-height: 19px;
     }
   }
+
   .header__logo-link {
     .header__logo-img {
       width: 30px;
@@ -416,12 +450,14 @@ $color-active-btn: #63557C;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 10px;
     height: 480px;
+
     .hero__title {
       grid-column: 1/3;
       grid-row: 1/2;
       font-size: 60px;
       line-height: 70px;
     }
+
     .hero__span {
       grid-column: 1/3;
       grid-row: 2/3;
@@ -429,19 +465,23 @@ $color-active-btn: #63557C;
       line-height: 24px;
     }
   }
+
   .portfolio__container {
     .portfolio__btns {
       column-gap: 20px;
       justify-content: unset;
+
       .btns-list__item {
         .btns-list__btn {
           font-size: 12px;
         }
       }
     }
+
     .portfolio__list {
       gap: 20px;
     }
+
     .portfolio__application {
       .portfolio__btn-applic {
         padding: 5px 35px 6px 4px;
@@ -452,6 +492,7 @@ $color-active-btn: #63557C;
       }
     }
   }
+
   .portfolio__modal {
     .portfolio__modal-content {
       padding: 40px;
@@ -460,27 +501,32 @@ $color-active-btn: #63557C;
 }
 
 @media (max-width: 570px) {
-  
+
 
   .team__container {
     position: relative;
     padding-bottom: 290px;
+
     .team__title {
       margin-bottom: 23px;
       font-size: 30px;
       line-height: 36px;
       letter-spacing: 0.07em;
     }
+
     .team__wrap {
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 10px;
+
       .team__box {
         grid-column: 1/3;
+
         .team__text {
           margin-bottom: 39px;
           font-size: 18px;
           line-height: 24px;
         }
+
         .team__list {
           .team__item {
             .team__btn {
@@ -491,6 +537,7 @@ $color-active-btn: #63557C;
           }
         }
       }
+
       .team__img {
         position: absolute;
         left: 0;
@@ -506,87 +553,108 @@ $color-active-btn: #63557C;
 
   .portfolio__container {
     padding-top: 66px;
+
     .portfolio__title {
       margin-bottom: 30px;
       font-size: 30px;
       line-height: 36px;
     }
+
     .portfolio__btns {
       grid-auto-flow: row;
       gap: 20px;
     }
+
     .portfolio__list {
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 10px;
+
       .item1 {
         grid-column: 1/3;
         grid-row: 1/3;
       }
+
       .item2 {
         grid-column: 1/3;
         grid-row: 3/4;
       }
+
       .item3 {
         grid-column: 1/3;
         grid-row: 4/5;
       }
+
       .item4 {
         grid-column: 1/3;
         grid-row: 5/6;
       }
+
       .item5 {
         grid-column: 1/3;
         grid-row: 6/7;
       }
+
       .item6 {
         grid-column: 1/3;
         grid-row: 8/9;
       }
+
       .item7 {
         grid-column: 1/3;
         grid-row: 7/8;
       }
+
       .item8 {
         grid-column: 1/3;
         grid-row: 9/10;
       }
+
       .item9 {
         grid-column: 1/3;
         grid-row: 10/11;
       }
+
       .item10 {
         grid-column: 1/3;
         grid-row: 11/12;
       }
+
       .item11 {
         grid-column: 1/3;
         grid-row: 12/13;
       }
+
       .item12 {
         grid-column: 1/3;
         grid-row: 13/14;
       }
+
       .item13 {
         grid-column: 1/3;
         grid-row: 14/15;
       }
+
       .item14 {
         grid-column: 1/3;
         grid-row: 15/16;
       }
+
       .item15 {
         grid-column: 1/3;
         grid-row: 16/17;
       }
+
       .item16 {
         grid-column: 1/3;
         grid-row: 18/19;
       }
+
       .item17 {
         grid-column: 1/3;
         grid-row: 17/18;
       }
     }
+
     .portfolio__btn {
       margin-bottom: 70px;
       padding: 22px 51px 22px 54px;
@@ -596,26 +664,33 @@ $color-active-btn: #63557C;
   .portfolio__modal {
     .portfolio__modal-content {
       padding: 15px 13px 15px 15px;
+
       .menu__close {
         top: -30px;
         opacity: 1;
       }
+
       .portfolio__modal-title {
         margin-bottom: 30px;
         font-size: 20px;
         line-height: 25px;
       }
+
       .portfolio__modal-wrap {
         flex-direction: column;
+
         .portfolio__modal-input {
           max-width: 100%;
+
           &:first-child {
             margin-bottom: 40px;
           }
         }
       }
+
       .portfolio__modal-box {
         flex-direction: column;
+
         .portfolio__modal-btn {
           margin-right: 0;
           margin-bottom: 30px;

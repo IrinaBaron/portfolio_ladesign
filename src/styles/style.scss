@@ -736,7 +736,7 @@ button {
       position: absolute;
       top: -35px;
       right: 15px;
-      width: 21px;
+      width: 25px;
       height: 29px;
       opacity: 0.6;
       border: 1px solid transparent;
@@ -747,6 +747,7 @@ button {
       }
       &.focus-visible {
         border-color: $color-back;
+        opacity: 1;
       }
       .menu__close-span {
         display: inline-block;
@@ -819,7 +820,8 @@ button {
           color: $color-grey;
           border-bottom: 1px solid $color-grey;
           transition: border-color .4s ease-in-out, color .4s ease-in-out;
-          &:hover {
+          &:hover,
+          &.focus-visible {
             color: $color-hover-for-dark;
             border-color: $color-hover-for-dark;
           }

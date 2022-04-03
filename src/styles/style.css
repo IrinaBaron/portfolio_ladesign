@@ -889,7 +889,7 @@ button {
   position: absolute;
   top: -35px;
   right: 15px;
-  width: 21px;
+  width: 25px;
   height: 29px;
   opacity: 0.6;
   border: 1px solid transparent;
@@ -902,6 +902,7 @@ button {
 
 .portfolio__modal .portfolio__modal-content .menu__close.focus-visible {
   border-color: #F7F7F7;
+  opacity: 1;
 }
 
 .portfolio__modal .portfolio__modal-content .menu__close .menu__close-span {
@@ -1024,8 +1025,9 @@ button {
   transition: border-color .4s ease-in-out, color .4s ease-in-out;
 }
 
-.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-span .portfolio__modal-link:hover,
-.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-link .portfolio__modal-link:hover {
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-span .portfolio__modal-link:hover, .portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-span .portfolio__modal-link.focus-visible,
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-link .portfolio__modal-link:hover,
+.portfolio__modal .portfolio__modal-content .portfolio__modal-box .portfolio__modal-link .portfolio__modal-link.focus-visible {
   color: #393246;
   border-color: #393246;
 }

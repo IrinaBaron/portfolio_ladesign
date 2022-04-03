@@ -106,19 +106,8 @@
             order: 3;
     z-index: 10;
   }
-  .header .header__container .header__burger::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    right: -4px;
-    bottom: -5px;
-    left: -4px;
-    border: 1px solid transparent;
-  }
-  .header .header__container .header__burger.focus-visible::before {
-    border-color: #F7F7F7;
-  }
   .header .header__container .header__burger .burger__span {
+    position: relative;
     display: block;
     width: 40px;
     height: 3px;
@@ -135,11 +124,19 @@
   .header .header__container .header__burger .burger__span:not(:last-child) {
     margin-bottom: 7px;
   }
-  .header .header__container .header__burger.active.focus-visible::before {
-    top: -5px;
-    right: 18px;
-    bottom: -8px;
-    left: -12px;
+  .header .header__container .header__burger .menu3 {
+    position: relative;
+  }
+  .header .header__container .header__burger .menu3::after {
+    content: '';
+    position: absolute;
+    top: -26px;
+    right: -4px;
+    bottom: -5px;
+    left: -4px;
+    border: 1px solid transparent;
+  }
+  .header .header__container .header__burger .menu3.focus-visible::after {
     border-color: #F7F7F7;
   }
   .header .header__container .header__burger.active .menu1 {
@@ -157,6 +154,18 @@
     margin-bottom: 0;
     -webkit-transform: rotate(45deg) translate(-10px, 3px);
             transform: rotate(45deg) translate(-10px, 3px);
+    z-index: 100;
+  }
+  .header .header__container .header__burger.active .menu3.focus-visible::after {
+    top: -16px;
+    right: -2px;
+    bottom: -15px;
+    left: -2px;
+    border-color: #FFFFFF;
+    z-index: 10;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    z-index: 100;
   }
   .header .header__container .header__wrap {
     -ms-grid-column: 2;
@@ -169,8 +178,9 @@
   }
   .header.color-header .header__burger .burger__span {
     background-color: #777777;
+    z-index: 100;
   }
-  .header.color-header .header__burger.focus-visible::before {
+  .header.color-header .header__burger .menu3.focus-visible::after {
     border-color: #393246;
   }
   .header.color-header.active .header__container .header__logo .header__logo-link:first-child {
@@ -191,8 +201,11 @@
   .header.color-header.active .header__container .header__wrap .header__phone-hero.focus-visible {
     border-color: #FFFFFF;
   }
-  .header.color-header.active .header__container .header__burger .burger__span {
+  .header.color-header.active .header__container .header__burger.active .burger__span {
     background-color: #FFFFFF;
+  }
+  .header.color-header.active .header__container .header__burger.active .burger__span.focus-visible::before {
+    border-color: #FFFFFF;
   }
   .hero__container .hero__title {
     -ms-grid-column: 1;
