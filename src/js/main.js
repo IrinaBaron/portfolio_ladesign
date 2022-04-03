@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-    //--------------modal-----------------
+    //--------------modal
     const clickModal = document.querySelector('.portfolio__btn-applic');
     const modal = document.querySelector('.portfolio__modal');
 
@@ -133,6 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModal.addEventListener('click', () => {
       modal.classList.remove('modal_active');
       document.body.classList.remove('stop-scrolling');
+    });
+
+    closeModal.addEventListener('keyup', (e) => {
+      if (e.code == 'Enter') {
+        modal.classList.remove('modal_active');
+        document.body.classList.remove('stop-scrolling');
+        return
+      }
     });
 
     // let closeInfo = document.querySelector('.contacts__close');
