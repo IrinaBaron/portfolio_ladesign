@@ -886,3 +886,28 @@ button {
   }
 }
 
+
+//--------------------portfolio page
+.nav__link.active {
+  color: $color-hover-for-dark;
+  border-bottom: 1px solid $color-hover-for-dark;
+}
+
+.header.portfolio-header {
+  .header__container {
+    padding: 30px 15px;
+    .header__nav {
+      grid-column: 3/7;
+      justify-self: center;
+    }
+    .header__wrap {
+      grid-column: 7/9;
+    }
+  }
+}
+
+.portfolio-hero {
+  .portfolio__container {
+    padding-top: 205px;
+  }
+}
