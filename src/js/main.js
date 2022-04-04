@@ -231,10 +231,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // ------------scroll--------------
     const btnScroll = document.querySelector('.btn__scroll');
     window.addEventListener('scroll', () => {
+      
       let scrollNum = window.pageYOffset;
-      console.log(scrollNum)
-      document.querySelector('.footer__go');
-      document.querySelector('.footer__link_logo');
+      console.log(scrollNum);
       if (scrollNum >= '100') {
         btnScroll.style.display = 'block';
         btnScroll.style.position = 'fixed';
@@ -243,6 +242,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       } else {
         btnScroll.style.display = 'none';
+      }
+      if(document.querySelector('.header').classList.contains('portfolio-header')) {
+        return
       }
       createScroll(750, scrollNum);
       if (document.documentElement.clientWidth <= 1225) {
@@ -263,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function createScroll(num, scrollNum) {
+      
       if(scrollNum >= num) {
         document.querySelector('.header').classList.add('color-header');
       } else {

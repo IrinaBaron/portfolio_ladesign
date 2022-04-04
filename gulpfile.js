@@ -40,7 +40,6 @@ const clean = () => {
 
 const resources = () => {
   return src('src/resources/**')
-
 }
 
 const styles = async () => {
@@ -51,7 +50,6 @@ const styles = async () => {
     .pipe(concat('main.css'))
     .pipe(dest('dist/styles'))
     .pipe(browserSync.stream())
-
 }
 
 
@@ -123,7 +121,7 @@ const prebuild = async function () {
     .pipe(dest('dist'))
   const resource = src('src/resources/**')
   //   .pipe(dest('dist'))
-  const css = src(['src/styles/normalize.css','src/styles/**/*.scss'])
+  const css = src(['src/styles/normalize.css','src/styles/style.scss','src/styles/*.scss','src/styles/media.scss'])
   .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.css'))
     .pipe(autoprefixes({
@@ -136,7 +134,7 @@ const prebuild = async function () {
   
 }
 
-const buildM = function () {
+const buildM = async function () {
   const js = src([
     'src/js/**/*.js',
     'src/js/main.js'
