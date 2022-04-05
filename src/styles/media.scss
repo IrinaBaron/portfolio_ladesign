@@ -412,6 +412,25 @@ $color-active-btn: #63557C;
       }
     }
   }
+
+  .header.portfolio-header {
+    .header__container {
+      padding: 30px 45px;
+      grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+      .header__wrap {
+        grid-column: 3/4;
+      }
+      .header__burger {
+        grid-column: 4/5;
+        .burger__span {
+          background-color: $color-hover-for-dark;
+        }
+      }
+      .header__nav {
+        grid-column: auto;
+      }
+    }
+  }
 }
 
 @media (max-width: 767px) {

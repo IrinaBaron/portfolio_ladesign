@@ -396,6 +396,27 @@
   .portfolio__modal .portfolio__modal-content .portfolio__modal-wrap .portfolio__modal-input {
     max-width: 235px;
   }
+  .header.portfolio-header .header__container {
+    padding: 30px 45px;
+    -ms-grid-columns: (minmax(88px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  }
+  .header.portfolio-header .header__container .header__wrap {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+  }
+  .header.portfolio-header .header__container .header__burger {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-column: 4/5;
+  }
+  .header.portfolio-header .header__container .header__burger .burger__span {
+    background-color: #393246;
+  }
+  .header.portfolio-header .header__container .header__nav {
+    grid-column: auto;
+  }
 }
 
 @media (max-width: 767px) {
