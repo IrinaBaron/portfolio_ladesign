@@ -66,7 +66,7 @@ html body {
   transition: background-color .4s ease-in-out;
 }
 
-.team__container .team__title, .portfolio__container .portfolio__title {
+.team__container .team__title, .portfolio__container .portfolio__title, .price-hero__container .price-hero__title {
   margin-bottom: 50px;
   font-weight: 300;
   font-size: 40px;
@@ -1118,5 +1118,60 @@ button {
 
 .portfolio-hero .portfolio__container {
   padding-top: 205px;
+}
+
+.price-hero__container {
+  padding-top: 205px;
+}
+
+.price-hero__container .price-hero__title {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.price-hero__container .price-hero__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.price-hero__container .price-hero__wrap .price-hero__subtitle {
+  max-width: 380px;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.price-hero__container .price-hero__wrap .price-hero__list {
+  max-width: 700px;
+}
+
+.price-hero__container .price-hero__wrap .price-hero__list .price-hero__item .price-hero__item-title {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.price-hero__container .price-hero__wrap .price-hero__list .price-hero__item .price-hero__text {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #777777;
+}
+
+.price-hero__container .price-hero__wrap .price-hero__list .price-hero__item:not(:last-child) {
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=style.css.map */
