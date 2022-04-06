@@ -517,6 +517,12 @@ $color-active-btn: #63557C;
       padding: 40px;
     }
   }
+
+  .header.portfolio-header {
+    .header__container {
+      padding: 20px 15px;
+    }
+  }
 }
 
 @media (max-width: 570px) {

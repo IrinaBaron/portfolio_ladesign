@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if(document.querySelector('.header').classList.contains('portfolio-header')) {
         return
       }
-      createScroll(750, scrollNum);
+      createScroll(150, scrollNum);
       if (document.documentElement.clientWidth <= 1225) {
         createScroll(550, scrollNum);
       };
