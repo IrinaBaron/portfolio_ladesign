@@ -917,6 +917,7 @@ button {
 
 .price-hero__container {
   padding-top: 205px;
+  padding-bottom: 75px;
   .price-hero__title {
     margin-bottom: 100px;
     text-align: center;
@@ -937,7 +938,15 @@ button {
     .price-hero__list {
       max-width: 700px;
       .price-hero__item {
-        
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -25px;
+          width: 100%;
+          height: 1px;
+          background-color: $color-light;
+        }
         .price-hero__item-title {
           display: block;
           margin-bottom: 12px;
@@ -955,10 +964,161 @@ button {
           line-height: 24px;
           color: $color-priority;
         }
-        
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
       }
-      .price-hero__item:not(:last-child) {
-        margin-bottom: 50px;
+    }
+  }
+}
+
+.price-dev {
+  .price-dev__container {
+    padding-top: 75px;
+    text-align: center;
+    .price-dev__title {
+      margin: 0 auto;
+      margin-bottom: 50px;
+      max-width: 400px;
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 45px;
+      text-align: center;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $color-priority;
+    }
+    .price-dev__list {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      .price-dev__item {
+        max-width: 380px;
+        width: 100%;
+        height: 100%;
+        &:not(:nth-child(2)) {
+          padding-top: 8px;
+        }
+        .price-dev__visible {
+          padding: 33px 15px 30px 15px;
+          text-align: center;
+          border: 1px solid $color-light;
+          .price-dev__subtitle {
+            margin-bottom: 15px;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 35px;
+            text-align: center;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: $color-priority;
+          }
+          .price-dev__price {
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 29px;
+            text-align: center;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: $color-grey;
+          }
+        }
+        .price-dev__content {
+          visibility: hidden;
+          height: 0;
+          transition: height .5s ease-in-out;
+          &.active {
+            visibility: visible;
+            margin-top: -1px;
+            height: 150px;
+            border: 1px solid $color-light;
+          }
+        }
+        &:nth-child(2) {
+          .price-dev__visible {
+            margin: 0;
+            padding-top: 22px;
+            border: 2px solid $color-hover-for-dark;
+            .price-dev__legend {
+              padding-left: 5px;
+              padding-right: 5px;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 16px;
+              text-align: center;
+              letter-spacing: 0.15em;
+              text-transform: uppercase;
+              color: $color-priority;
+            }
+          }
+        }
+        .price-dev__btn {
+          padding: 22px 57px;
+          width: 100%;
+          box-sizing: border-box;
+          border: 1px solid $color-hover-for-dark;
+          background-color: $color-white;
+          background-image: url('../images/icons/arrow-up-right.svg');
+          background-position: right 139px center;
+          background-repeat: no-repeat;
+          background-size: 16px;
+        }
+        &:nth-child(2) {
+          .price-dev__btn {
+            color: $color-white;
+            background-color: $color-hover-for-dark;
+            background-image: url('../images/icons/white_arrow-up-right.svg');
+          }
+        }
+      }
+    }
+    .price-dev__btn-more {
+      position: relative;
+      padding: 7px 40px 7px 0px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $color-priority;
+      border: none;
+      background: none;
+      transition: color .4s ease-in-out, transform 0.4s ease-in-out;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid $color-light;
+        background-image: url('../images/icons/arrow_down_gray.svg');
+        background-position: right 50% top 50%;
+        background-repeat: no-repeat;
+        background-size: 7px 15px;
+        transition: border-color .4s ease-in-out;
+      }
+      &.active {
+        color: $color-hover-for-dark;
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+      &:hover {
+        color: $color-hover-for-dark;
+        &::after {
+          border-color: $color-hover-for-dark;
+        }
       }
     }
   }
