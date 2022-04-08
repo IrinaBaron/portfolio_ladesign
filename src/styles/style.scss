@@ -1026,18 +1026,45 @@ button {
         .price-dev__content {
           visibility: hidden;
           height: 0;
+          min-height: 0;
           transition: height .5s ease-in-out;
+          .dev-content__list {
+            padding: 30px;
+            height: 0;
+            opacity: 0;
+            text-align: left;
+            transition: opacity .6s linear, height .7s ease-in-out, visibility .7s ease-in-out;
+            .dev-content__item {
+              font-family: 'Roboto';
+              font-weight: 300;
+              font-size: 16px;
+              line-height: 24px;
+              color: $color-priority;
+              &:not(:last-child) {
+                margin-bottom: 15px;
+              }
+            }
+          }
           &.active {
             visibility: visible;
             margin-top: -1px;
-            height: 150px;
+            // height: 100%;
+            height: 469px;
             border: 1px solid $color-light;
+            &:nth-child(2) {
+              margin-top: 0;
+            }
+            .dev-content__list {
+              opacity: 1;
+              height: 469px;
+            }
           }
         }
         &:nth-child(2) {
           .price-dev__visible {
             margin: 0;
             padding-top: 22px;
+            padding-bottom: 33px;
             border: 2px solid $color-hover-for-dark;
             .price-dev__legend {
               padding-left: 5px;

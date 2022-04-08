@@ -1257,20 +1257,52 @@ button {
 .price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content {
   visibility: hidden;
   height: 0;
+  min-height: 0;
   -webkit-transition: height .5s ease-in-out;
   transition: height .5s ease-in-out;
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content .dev-content__list {
+  padding: 30px;
+  height: 0;
+  opacity: 0;
+  text-align: left;
+  -webkit-transition: opacity .6s linear, height .7s ease-in-out, visibility .7s ease-in-out;
+  transition: opacity .6s linear, height .7s ease-in-out, visibility .7s ease-in-out;
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content .dev-content__list .dev-content__item {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #777777;
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content .dev-content__list .dev-content__item:not(:last-child) {
+  margin-bottom: 15px;
 }
 
 .price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content.active {
   visibility: visible;
   margin-top: -1px;
-  height: 150px;
+  height: 469px;
   border: 1px solid #D5D5D5;
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content.active:nth-child(2) {
+  margin-top: 0;
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content.active .dev-content__list {
+  opacity: 1;
+  height: 469px;
 }
 
 .price-dev .price-dev__container .price-dev__list .price-dev__item:nth-child(2) .price-dev__visible {
   margin: 0;
   padding-top: 22px;
+  padding-bottom: 33px;
   border: 2px solid #393246;
 }
 
