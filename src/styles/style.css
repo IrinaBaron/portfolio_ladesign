@@ -66,7 +66,7 @@ html body {
   transition: background-color .4s ease-in-out;
 }
 
-.team__container .team__title, .portfolio__container .portfolio__title, .price-hero__container .price-hero__title {
+.team__container .team__title, .portfolio__container .portfolio__title, .price-hero__container .price-hero__title, .price-project__container .price-project__title {
   margin-bottom: 50px;
   font-weight: 300;
   font-size: 40px;
@@ -1037,8 +1037,8 @@ button {
   top: 0;
   visibility: visible;
   opacity: 1;
-  -webkit-transition: visibility .4s ease-in-out,left .4s ease-in-out,opacity .4s ease-in-out;
-  transition: visibility .4s ease-in-out,left .4s ease-in-out,opacity .4s ease-in-out;
+  -webkit-transition: visibility .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out;
+  transition: visibility .4s ease-in-out, left .4s ease-in-out, opacity .4s ease-in-out;
 }
 
 .footer {
@@ -1396,5 +1396,60 @@ button {
 
 .price-dev .price-dev__container .price-dev__btn-more:hover::after {
   border-color: #393246;
+}
+
+.price-project__container {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  text-align: center;
+}
+
+.price-project__container .price-project__swiper .swiper-button-next:after,
+.price-project__container .price-project__swiper .swiper-button-prev:after {
+  content: '';
+}
+
+.price-project__container .price-project__swiper .swiper-button-prev {
+  left: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: 1px solid #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
+  background-image: url("../images/icons/arrow_right_white.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-transition: background-color .4s ease-in-out, background-color .4s ease-in-out;
+  transition: background-color .4s ease-in-out, background-color .4s ease-in-out;
+}
+
+.price-project__container .price-project__swiper .swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #FFFFFF;
+}
+
+.price-project__container .price-project__swiper .swiper-button-next {
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: 1px solid #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
+  background-image: url("../images/icons/arrow_right_white.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
+  transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
+}
+
+.price-project__container .price-project__swiper .swiper-button-next:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #FFFFFF;
 }
 /*# sourceMappingURL=style.css.map */
