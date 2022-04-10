@@ -56,7 +56,7 @@ html body {
   transition: opacity .4s ease-in-out;
 }
 
-.nav__list .nav__link, .header__wrap .header__phone-hero, .portfolio__container .portfolio__btns .btns-list__item .btns-list__btn, .portfolio__container .portfolio__application .portfolio__btn-applic, .footer .footer__container .footer__list .footer__item .footer__link {
+.nav__list .nav__link, .header__wrap .header__phone-hero, .portfolio__container .portfolio__btns .btns-list__item .btns-list__btn, .footer .footer__container .footer__list .footer__item .footer__link {
   -webkit-transition: border-color .4s ease-in-out, color .4s ease-in-out;
   transition: border-color .4s ease-in-out, color .4s ease-in-out;
 }
@@ -827,8 +827,8 @@ button {
   padding: 22px 54px;
 }
 
-.portfolio__container .portfolio__application .portfolio__btn-applic {
-  padding-right: 31px;
+.portfolio__application .portfolio__btn-applic {
+  padding-right: 34px;
   height: auto;
   font-weight: 300;
   font-size: 40px;
@@ -836,23 +836,23 @@ button {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #777777;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-bottom: 1px solid #D5D5D5;
   background-image: url("../images/icons/arrow-up-right.svg");
-  background-position: right top 16px;
+  background-position: right 2px top 16px;
   background-repeat: no-repeat;
-  -webkit-transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
-  transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
+  -webkit-transition: color .4s ease-in-out, background-image .4s ease-in-out, background-color .4s ease-in-out, border-bottom .4s ease-in-out, border .4s ease-in-out;
+  transition: color .4s ease-in-out, background-image .4s ease-in-out, background-color .4s ease-in-out, border-bottom .4s ease-in-out, border .4s ease-in-out;
 }
 
-.portfolio__container .portfolio__application .portfolio__btn-applic:hover {
+.portfolio__application .portfolio__btn-applic:hover {
   color: #393246;
   border-bottom: 2px solid #393246;
   background-color: #FFFFFF;
   background-image: url("../images/icons/hover_arrow-up-right.svg");
 }
 
-.portfolio__container .portfolio__application .portfolio__btn-applic.focus-visible {
+.portfolio__application .portfolio__btn-applic.focus-visible {
   color: #393246;
   border: 2px solid #393246;
   background-color: #FFFFFF;
@@ -1329,12 +1329,34 @@ button {
   background-position: right 139px center;
   background-repeat: no-repeat;
   background-size: 16px;
+  -webkit-transition: color .4s ease-in-out, background-color .4s ease-in-out, background-image .4s ease-in-out;
+  transition: color .4s ease-in-out, background-color .4s ease-in-out, background-image .4s ease-in-out;
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__btn:hover, .price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__btn.focus-visible {
+  color: #FFFFFF;
+  background-color: #393246;
+  background-image: url("../images/icons/white_arrow-up-right.svg");
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__btn:active {
+  color: #FFFFFF;
+  background-color: #4A415A;
+  background-image: url("../images/icons/white_arrow-up-right.svg");
 }
 
 .price-dev .price-dev__container .price-dev__list .price-dev__item:nth-child(2) .price-dev__btn {
   color: #FFFFFF;
   background-color: #393246;
   background-image: url("../images/icons/white_arrow-up-right.svg");
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item:nth-child(2) .price-dev__btn:hover, .price-dev .price-dev__container .price-dev__list .price-dev__item:nth-child(2) .price-dev__btn.focus-visible {
+  background-color: #4A415A;
+}
+
+.price-dev .price-dev__container .price-dev__list .price-dev__item:nth-child(2) .price-dev__btn:active {
+  background-color: #63557C;
 }
 
 .price-dev .price-dev__container .price-dev__btn-more {
@@ -1390,22 +1412,34 @@ button {
           transform: rotate(180deg);
 }
 
-.price-dev .price-dev__container .price-dev__btn-more:hover {
+.price-dev .price-dev__container .price-dev__btn-more:hover, .price-dev .price-dev__container .price-dev__btn-more.focus-visible {
   color: #393246;
 }
 
-.price-dev .price-dev__container .price-dev__btn-more:hover::after {
+.price-dev .price-dev__container .price-dev__btn-more:hover::after, .price-dev .price-dev__container .price-dev__btn-more.focus-visible::after {
   border-color: #393246;
 }
 
 .price-project__container {
   padding-top: 75px;
-  padding-bottom: 75px;
+  padding-bottom: 130px;
   text-align: center;
 }
 
-.price-project__container .price-project__swiper .swiper-button-next:after,
-.price-project__container .price-project__swiper .swiper-button-prev:after {
+.price-project__container .price-project__swiper {
+  margin-bottom: 130px;
+}
+
+.price-project__container .price-project__swiper .swiper-wrapper {
+  margin-bottom: 40px;
+}
+
+.price-project__container .price-project__swiper .swiper-wrapper .swiper-slide .price-project__img {
+  max-height: 270px;
+}
+
+.price-project__container .price-project__swiper .swiper-button-next::after,
+.price-project__container .price-project__swiper .swiper-button-prev::after {
   content: '';
 }
 
@@ -1451,5 +1485,33 @@ button {
 .price-project__container .price-project__swiper .swiper-button-next:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #FFFFFF;
+}
+
+.price-project__container .price-project__swiper .swiper-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.price-project__container .price-project__swiper .swiper-pagination-bullet {
+  margin: 0;
+  width: 158px;
+  height: 1px;
+  border: none;
+  border-radius: 0;
+  background-color: #D5D5D5;
+  -webkit-transition: height .4s ease-in-out, background-color .4s ease-in-out;
+  transition: height .4s ease-in-out, background-color .4s ease-in-out;
+}
+
+.price-project__container .price-project__swiper .swiper-pagination-bullet-active {
+  height: 3px;
+  background-color: #393246;
 }
 /*# sourceMappingURL=style.css.map */
