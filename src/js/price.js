@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     });
 
-
+    openModal();
 
   } catch (error) {
     error

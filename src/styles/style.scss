@@ -63,7 +63,6 @@ $color-light: #D5D5D5;
 $color-white: #FFFFFF;
 $color-hover-for-dark: #393246;
 $color-active: #4A415A;
-$color-hover-btn: #4A415A;
 $color-active-btn: #63557C;
 
 
@@ -169,7 +168,7 @@ button {
 
   &:hover,
   &.focus-visible {
-    background-color: $color-hover-btn;
+    background-color: $color-active;
   }
 
   &:active {
@@ -761,41 +760,41 @@ button {
     padding: 22px 54px;
   }
 
-  .portfolio__application {
-    .portfolio__btn-applic {
-      padding-right: 31px;
-      height: auto;
-      font-weight: 300;
-      font-size: 40px;
-      line-height: 47px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: $color-priority;
-      border: 2px solid transparent;
-      border-bottom: 1px solid $color-light;
-      background-image: url('../images/icons/arrow-up-right.svg');
-      background-position: right top 16px;
-      background-repeat: no-repeat;
-      transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
-      @extend %transitionBorderBotom;
+  
+}
 
-      &:hover {
-        color: $color-hover-for-dark;
-        border-bottom: 2px solid $color-hover-for-dark;
-        background-color: $color-white;
-        background-image: url('../images/icons/hover_arrow-up-right.svg');
-      }
+.portfolio__application {
+  .portfolio__btn-applic {
+    padding-right: 34px;
+    height: auto;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-priority;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $color-light;
+    background-image: url('../images/icons/arrow-up-right.svg');
+    background-position: right 2px top 16px;
+    background-repeat: no-repeat;
+    transition: color .4s ease-in-out, background-image .4s ease-in-out, background-color .4s ease-in-out, border-bottom .4s ease-in-out, border .4s ease-in-out;
+    &:hover {
+      color: $color-hover-for-dark;
+      border-bottom: 2px solid $color-hover-for-dark;
+      background-color: $color-white;
+      background-image: url('../images/icons/hover_arrow-up-right.svg');
+    }
 
-      &.focus-visible {
-        color: $color-hover-for-dark;
-        border: 2px solid $color-hover-for-dark;
-        background-color: $color-white;
-        background-image: url('../images/icons/hover_arrow-up-right.svg');
-      }
-
+    &.focus-visible {
+      color: $color-hover-for-dark;
+      border: 2px solid $color-hover-for-dark;
+      background-color: $color-white;
+      background-image: url('../images/icons/hover_arrow-up-right.svg');
     }
 
   }
+
 }
 
 .portfolio__modal {
@@ -1179,7 +1178,6 @@ button {
           &.active {
             visibility: visible;
             margin-top: -1px;
-            // height: 100%;
             height: 469px;
             border: 1px solid $color-light;
 
@@ -1225,6 +1223,18 @@ button {
           background-position: right 139px center;
           background-repeat: no-repeat;
           background-size: 16px;
+          transition: color .4s ease-in-out, background-color .4s ease-in-out, background-image .4s ease-in-out;
+          &:hover,
+          &.focus-visible {
+            color: $color-white;
+            background-color: $color-hover-for-dark;
+            background-image: url('../images/icons/white_arrow-up-right.svg');
+          }
+          &:active {
+            color: $color-white;
+            background-color: $color-active;
+            background-image: url('../images/icons/white_arrow-up-right.svg');
+          }
         }
 
         &:nth-child(2) {
@@ -1232,6 +1242,13 @@ button {
             color: $color-white;
             background-color: $color-hover-for-dark;
             background-image: url('../images/icons/white_arrow-up-right.svg');
+            &:hover,
+            &.focus-visible {
+              background-color: $color-active;
+            }
+            &:active {
+              background-color: $color-active-btn;
+            }
           }
         }
       }
@@ -1284,7 +1301,8 @@ button {
         }
       }
 
-      &:hover {
+      &:hover,
+      &.focus-visible {
         color: $color-hover-for-dark;
 
         &::after {
@@ -1297,7 +1315,7 @@ button {
 
 .price-project__container {
   padding-top: 75px;
-  padding-bottom: 75px;
+  padding-bottom: 130px;
   text-align: center;
 
   .price-project__title {
@@ -1305,9 +1323,18 @@ button {
   }
 
   .price-project__swiper {
-
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
+    margin-bottom: 130px;
+    .swiper-wrapper {
+      margin-bottom: 40px;
+      .swiper-slide {
+        .price-project__img {
+          max-height: 270px;
+        }
+        
+      }
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
       content: '';
     }
 
@@ -1346,6 +1373,24 @@ button {
         background-color: rgba(255, 255, 255, 0.2);
         border: 2px solid $color-white;
       }
+    }
+    .swiper-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-pagination-bullet {
+      margin: 0;
+      width: 158px;
+      height: 1px;
+      border: none;
+      border-radius: 0;
+      background-color: $color-light;
+      transition: height .4s ease-in-out, background-color .4s ease-in-out;
+    }
+    .swiper-pagination-bullet-active {
+      height: 3px;
+      background-color: $color-hover-for-dark;
     }
   }
 }

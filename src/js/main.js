@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   try {
+    openModal();
     // ----------burger-menu 
 
     const burgerBtn = document.querySelector('.header__burger')
@@ -40,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
           e.target.classList.toggle('show');
-          e.target.nextElementSibling.classList.toggle('show'); 
+          e.target.nextElementSibling.classList.toggle('show');
         }
       })
       return
-      })
+    })
 
     // -------------portfolio
     let elements = document.querySelectorAll('.portfolio__item');
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
           let aparts = document.querySelectorAll('.apart');
           aparts.forEach(apart => {
             apart.style.display = 'block';
-            
+
           })
           // document.querySelector('.item4').style.gridColumn = '5/7';
           return
@@ -121,27 +122,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     //--------------modal
-    const clickModal = document.querySelector('.portfolio__btn-applic');
-    const modal = document.querySelector('.portfolio__modal');
+    function openModal() {
+      const clickModal = document.querySelector('.portfolio__btn-applic');
+      const modal = document.querySelector('.portfolio__modal');
 
-    clickModal.addEventListener('click', () => {
-      modal.classList.add('modal_active');
-      document.body.classList.add('stop-scrolling');
-    });
+      clickModal.addEventListener('click', () => {
+        modal.classList.add('modal_active');
+        document.body.classList.add('stop-scrolling');
+      });
 
-    let closeModal = document.querySelector('.portfolio__modal .menu__close');
-    closeModal.addEventListener('click', () => {
-      modal.classList.remove('modal_active');
-      document.body.classList.remove('stop-scrolling');
-    });
-
-    closeModal.addEventListener('keyup', (e) => {
-      if (e.code == 'Enter') {
+      let closeModal = document.querySelector('.portfolio__modal .menu__close');
+      closeModal.addEventListener('click', () => {
         modal.classList.remove('modal_active');
         document.body.classList.remove('stop-scrolling');
-        return
-      }
-    });
+      });
+
+      closeModal.addEventListener('keyup', (e) => {
+        if (e.code == 'Enter') {
+          modal.classList.remove('modal_active');
+          document.body.classList.remove('stop-scrolling');
+          return
+        }
+      });
+    }
+    
 
     // let closeInfo = document.querySelector('.contacts__close');
 
@@ -172,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //   e.preventDefault();
     //   let validName = validateName();
     //   let validEmail = validateEmail();
-      
+
     // })
 
     // aboutBtn.addEventListener('click', function (e) {
@@ -231,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ------------scroll--------------
     const btnScroll = document.querySelector('.btn__scroll');
     window.addEventListener('scroll', () => {
-      
+
       let scrollNum = window.pageYOffset;
       console.log(scrollNum);
       if (scrollNum >= '100') {
@@ -243,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         btnScroll.style.display = 'none';
       }
-      if(document.querySelector('.header').classList.contains('portfolio-header')) {
+      if (document.querySelector('.header').classList.contains('portfolio-header')) {
         return
       }
       createScroll(150, scrollNum);
@@ -265,8 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function createScroll(num, scrollNum) {
-      
-      if(scrollNum >= num) {
+
+      if (scrollNum >= num) {
         document.querySelector('.header').classList.add('color-header');
       } else {
         document.querySelector('.header').classList.remove('color-header');
