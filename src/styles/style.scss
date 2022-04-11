@@ -322,7 +322,7 @@ button {
 
 .header.color-header {
   .header__container {
-    padding: 20px 15px;
+    padding: 20px 47px;
   }
 
   .header__logo {
@@ -1339,6 +1339,7 @@ button {
     }
 
     .swiper-button-prev {
+      top: 43%;
       left: 30px;
       width: 40px;
       height: 40px;
@@ -1351,13 +1352,15 @@ button {
       transform: rotate(180deg);
       backdrop-filter: blur(5px);
       transition: background-color .4s ease-in-out, background-color .4s ease-in-out;
-      &:hover {
+      &:hover,
+      &.focus-visible {
         background-color: rgba(255, 255, 255, 0.2);
         border: 2px solid $color-white;
       }
     }
 
     .swiper-button-next {
+      top: 43%;
       right: 30px;
       width: 40px;
       height: 40px;
@@ -1369,7 +1372,8 @@ button {
       background-repeat: no-repeat;
       backdrop-filter: blur(5px);
       transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
-      &:hover {
+      &:hover,
+      &.focus-visible {
         background-color: rgba(255, 255, 255, 0.2);
         border: 2px solid $color-white;
       }
