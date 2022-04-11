@@ -312,7 +312,7 @@ button {
 }
 
 .header.color-header .header__container {
-  padding: 20px 15px;
+  padding: 20px 47px;
 }
 
 .header.color-header .header__logo .header__logo-link {
@@ -1444,6 +1444,7 @@ button {
 }
 
 .price-project__container .price-project__swiper .swiper-button-prev {
+  top: 43%;
   left: 30px;
   width: 40px;
   height: 40px;
@@ -1461,12 +1462,13 @@ button {
   transition: background-color .4s ease-in-out, background-color .4s ease-in-out;
 }
 
-.price-project__container .price-project__swiper .swiper-button-prev:hover {
+.price-project__container .price-project__swiper .swiper-button-prev:hover, .price-project__container .price-project__swiper .swiper-button-prev.focus-visible {
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #FFFFFF;
 }
 
 .price-project__container .price-project__swiper .swiper-button-next {
+  top: 43%;
   right: 30px;
   width: 40px;
   height: 40px;
@@ -1482,7 +1484,7 @@ button {
   transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
 }
 
-.price-project__container .price-project__swiper .swiper-button-next:hover {
+.price-project__container .price-project__swiper .swiper-button-next:hover, .price-project__container .price-project__swiper .swiper-button-next.focus-visible {
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #FFFFFF;
 }

@@ -251,12 +251,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return
       }
       createScroll(150, scrollNum);
-      if (document.documentElement.clientWidth <= 1225) {
-        createScroll(550, scrollNum);
-      };
-      if (document.documentElement.clientWidth <= 1023) {
-        createScroll(430, scrollNum);
-      };
+      // if (document.documentElement.clientWidth <= 1225) {
+      //   createScroll(550, scrollNum);
+      // };
+      // if (document.documentElement.clientWidth <= 1023) {
+      //   createScroll(430, scrollNum);
+      // };
 
     }, { passive: true })
 
