@@ -467,8 +467,34 @@
   .price-dev .price-dev__container .price-dev__list .price-dev__item {
     max-width: 100%;
   }
+  .price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content .dev-content__list {
+    -webkit-transition: opacity .1s linear, height .1s linear, visibility .1s linear;
+    transition: opacity .1s linear, height .1s linear, visibility .1s linear;
+  }
+  .price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content.active {
+    height: auto;
+  }
+  .price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__content.active .dev-content__list {
+    height: auto;
+  }
+  .price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__btn {
+    display: none;
+    color: #FFFFFF;
+    background-color: #393246;
+    background-image: url("../images/icons/white_arrow-up-right.svg");
+  }
+  .price-dev .price-dev__container .price-dev__list .price-dev__item .price-dev__btn.active {
+    display: block;
+  }
   .price-dev .price-dev__container .price-dev__list .price-dev__item:not(:last-child) {
     margin-bottom: 30px;
+  }
+  .price-dev .price-dev__container .price-dev__btn-more {
+    display: none;
+  }
+  .price-dev .price-dev__container .price-dev__btn-media {
+    display: inline-block;
+    margin-top: -1px;
   }
   .price-project__container {
     padding-top: 35px;

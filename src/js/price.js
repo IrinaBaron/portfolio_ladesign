@@ -1,23 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    let btnPriceMore = document.querySelector('.price-dev__btn-more');
     let elementsContent = document.querySelectorAll('.price-dev__content');
-
-    btnPriceMore.addEventListener('click', () => {
-      if (btnPriceMore.classList.contains('active')) {
-        btnPriceMore.textContent = 'развернуть';
+    if(document.documentElement.clientWidth >= 1024) {
+      let btnPriceMore = document.querySelector('.btn-show-content');
+  
+      btnPriceMore.addEventListener('click', () => {
+        if (btnPriceMore.classList.contains('active')) {
+          btnPriceMore.textContent = 'развернуть';
+          elementsContent.forEach(elem => {
+            elem.classList.remove('active');
+          })
+          btnPriceMore.classList.remove('active');
+          return;
+        }
         elementsContent.forEach(elem => {
-          elem.classList.remove('active');
-        })
-        btnPriceMore.classList.remove('active');
-        return;
-      }
-      elementsContent.forEach(elem => {
-        elem.classList.toggle('active');
+          elem.classList.toggle('active');
+        });
+        btnPriceMore.classList.toggle('active');
+        btnPriceMore.textContent = 'свернуть';
       });
-      btnPriceMore.classList.toggle('active');
-      btnPriceMore.textContent = 'свернуть';
-    });
+    }
+    
+    if(document.documentElement.clientWidth <= 1023) {
+      let btnsShow = document.querySelectorAll('.price-dev__btn-media');
+      let btnsOrder = document.querySelectorAll('.price-dev__btn');
+
+      btnsShow.forEach(btn => {
+        btn.addEventListener('click', e => {
+          let parent = e.target.parentNode;
+          let content = parent.firstElementChild.nextElementSibling;
+
+          if (e.target.closest('.active')) {
+            btn.textContent = 'развернуть';
+            e.target.classList.remove('active');
+            e.target.previousElementSibling.classList.remove('active');
+            content.classList.remove('active');
+          } else {
+            for (let i = 0; i < btnsShow.length; i++) {
+              if (btnsShow[i].classList.contains('active')) {
+                btnsShow[i].textContent = 'развернуть';
+                btnsShow[i].classList.remove('active');
+                elementsContent[i].classList.remove('active');
+                btnsOrder[i].classList.remove('active');
+              }
+            }
+            e.target.classList.toggle('active');
+            e.target.previousElementSibling.classList.toggle('active');
+            content.classList.toggle('active');
+            btn.textContent = 'свернуть';
+          }
+        })
+        return
+      })
+
+      document.addEventListener('click', () => {
+        let listContentText = document.querySelectorAll('.price-dev__content.active .dev-content__item');
+
+        listContentText.forEach(elem => {
+          if( elem.textContent.length <= 1) {
+            elem.style.display = 'none';
+          }
+        })
+      })
+      
+    }
+
+    //-------swiper
 
     const swiper1 = new Swiper('.price-project__swiper', {
   
