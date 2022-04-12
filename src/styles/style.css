@@ -1420,6 +1420,19 @@ button {
   border-color: #393246;
 }
 
+.price-dev .price-dev__container .price-dev__btn-media {
+  display: none;
+  padding: 22px;
+  width: 100%;
+  border: 1px solid #393246;
+}
+
+.price-dev .price-dev__container .price-dev__btn-media::after {
+  top: 15px;
+  right: 27%;
+  left: 67%;
+}
+
 .price-project__container {
   padding-top: 75px;
   padding-bottom: 130px;

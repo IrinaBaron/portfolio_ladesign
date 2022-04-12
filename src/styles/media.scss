@@ -495,10 +495,38 @@ $color-active-btn: #63557C;
         flex-direction: column;
         .price-dev__item {
           max-width: 100%;
+          .price-dev__content {
+            .dev-content__list {
+              transition: opacity .1s linear, height .1s linear, visibility .1s linear;
+            }
+            &.active {
+              height: auto;
+              .dev-content__list {
+                height: auto;
+              }
+            }
+          }
+          .price-dev__btn {
+            display: none;
+            color: $color-white;
+            background-color: $color-hover-for-dark;
+            background-image: url('../images/icons/white_arrow-up-right.svg');
+            &.active {
+              display: block;
+            }
+          }
           &:not(:last-child) {
             margin-bottom: 30px;
           }
         }
+      }
+      
+      .price-dev__btn-more {
+        display: none;
+      }
+      .price-dev__btn-media {
+        display: inline-block;
+        margin-top: -1px;
       }
     }
   }

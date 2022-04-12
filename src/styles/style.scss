@@ -760,7 +760,7 @@ button {
     padding: 22px 54px;
   }
 
-  
+
 }
 
 .portfolio__application {
@@ -779,6 +779,7 @@ button {
     background-position: right 2px top 16px;
     background-repeat: no-repeat;
     transition: color .4s ease-in-out, background-image .4s ease-in-out, background-color .4s ease-in-out, border-bottom .4s ease-in-out, border .4s ease-in-out;
+
     &:hover {
       color: $color-hover-for-dark;
       border-bottom: 2px solid $color-hover-for-dark;
@@ -1224,12 +1225,14 @@ button {
           background-repeat: no-repeat;
           background-size: 16px;
           transition: color .4s ease-in-out, background-color .4s ease-in-out, background-image .4s ease-in-out;
+
           &:hover,
           &.focus-visible {
             color: $color-white;
             background-color: $color-hover-for-dark;
             background-image: url('../images/icons/white_arrow-up-right.svg');
           }
+
           &:active {
             color: $color-white;
             background-color: $color-active;
@@ -1242,10 +1245,12 @@ button {
             color: $color-white;
             background-color: $color-hover-for-dark;
             background-image: url('../images/icons/white_arrow-up-right.svg');
+
             &:hover,
             &.focus-visible {
               background-color: $color-active;
             }
+
             &:active {
               background-color: $color-active-btn;
             }
@@ -1310,8 +1315,21 @@ button {
         }
       }
     }
+
+    .price-dev__btn-media {
+      display: none;
+      padding: 22px;
+      width: 100%;
+      border: 1px solid $color-hover-for-dark;
+      &::after {
+        top: 15px;
+        right: 27%;
+        left: 67%;
+      }
+    }
   }
 }
+
 
 .price-project__container {
   padding-top: 75px;
@@ -1324,15 +1342,18 @@ button {
 
   .price-project__swiper {
     margin-bottom: 130px;
+
     .swiper-wrapper {
       margin-bottom: 40px;
+
       .swiper-slide {
         .price-project__img {
           max-height: 270px;
         }
-        
+
       }
     }
+
     .swiper-button-next::after,
     .swiper-button-prev::after {
       content: '';
@@ -1352,6 +1373,7 @@ button {
       transform: rotate(180deg);
       backdrop-filter: blur(5px);
       transition: background-color .4s ease-in-out, background-color .4s ease-in-out;
+
       &:hover,
       &.focus-visible {
         background-color: rgba(255, 255, 255, 0.2);
@@ -1372,17 +1394,20 @@ button {
       background-repeat: no-repeat;
       backdrop-filter: blur(5px);
       transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
+
       &:hover,
       &.focus-visible {
         background-color: rgba(255, 255, 255, 0.2);
         border: 2px solid $color-white;
       }
     }
+
     .swiper-pagination {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .swiper-pagination-bullet {
       margin: 0;
       width: 158px;
@@ -1392,6 +1417,7 @@ button {
       background-color: $color-light;
       transition: height .4s ease-in-out, background-color .4s ease-in-out;
     }
+
     .swiper-pagination-bullet-active {
       height: 3px;
       background-color: $color-hover-for-dark;
