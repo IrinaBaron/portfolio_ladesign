@@ -66,7 +66,7 @@ html body {
   transition: background-color .4s ease-in-out;
 }
 
-.team__container .team__title, .portfolio__container .portfolio__title, .price-hero__container .price-hero__title, .price-project__container .price-project__title {
+.team__container .team__title, .portfolio__container .portfolio__title, .price-hero__container .price-hero__title, .price-project__container .price-project__title, .contacts-hero__container .contacts-hero__title {
   margin-bottom: 50px;
   font-weight: 300;
   font-size: 40px;
@@ -1528,5 +1528,120 @@ button {
 .price-project__container .price-project__swiper .swiper-pagination-bullet-active {
   height: 3px;
   background-color: #393246;
+}
+
+.contacts-hero__container {
+  padding: 205px 15px 130px 15px;
+}
+
+.contacts-hero__container .contacts-hero__title {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.contacts-hero__container .contacts-hero__subtitle {
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.contacts-hero__container .contacts-hero__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form {
+  margin-right: 10px;
+  max-width: 513px;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__text {
+  margin-bottom: 27px;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27px;
+  color: #777777;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item {
+  margin-bottom: 40px;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item:last-child {
+  margin-bottom: 44px;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item .contacts-hero__input {
+  padding: 5px;
+  padding-left: 0px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #777777;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__send-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__send-box .contacts-hero__send-btn {
+  margin-right: 30px;
+  padding: 22px 57px;
+  padding-right: 83px;
+  height: auto;
+  background-image: url("../images/icons/white_arrow-up-right.svg");
+  background-position: right 57px center;
+  background-repeat: no-repeat;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__send-box .contacts-hero__send-span {
+  display: block;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #878787;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__send-box .contacts-hero__send-span .contacts-hero__send-link {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #393246;
+  -webkit-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__send-box .contacts-hero__send-span .contacts-hero__send-link:hover {
+  opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */
