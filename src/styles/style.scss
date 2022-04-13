@@ -1424,3 +1424,91 @@ button {
     }
   }
 }
+
+//------------page contacts
+.contacts-hero__container {
+  padding: 205px 15px 130px 15px;
+  .contacts-hero__title {
+    @extend %title;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  .contacts-hero__subtitle {
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-priority;
+  }
+  .contacts-hero__wrap {
+    display: flex;
+    justify-content: space-between;
+    .contacts-hero__wrap-form {
+      margin-right: 10px;
+      max-width: 513px;
+      .contacts-hero__text {
+        margin-bottom: 27px;
+        font-family: 'Roboto';
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 27px;
+        color: $color-priority;
+      }
+      .contacts-hero__form {
+        display: flex;
+        flex-direction: column;
+        .contacts-hero__list {
+          .contacts-hero__item {
+            margin-bottom: 40px;&:last-child {
+              margin-bottom: 44px;
+            }
+            .contacts-hero__input {
+              padding: 5px;
+              padding-left: 0px;
+              width: 100%;
+              border: 1px solid transparent;
+              border-bottom: 1px solid $color-priority;
+            }
+          }
+        }
+        .contacts-hero__send-box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .contacts-hero__send-btn {
+            margin-right: 30px;
+            padding: 22px 57px;
+            padding-right: 83px;
+            height: auto;
+            background-image: url('../images/icons/white_arrow-up-right.svg');
+            background-position: right 57px center;
+            background-repeat: no-repeat;
+          }
+          .contacts-hero__send-span {
+            display: block;
+            font-family: 'Roboto';
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 15px;
+            color: $color-grey;
+            .contacts-hero__send-link {
+              font-family: 'Roboto';
+              font-weight: 400;
+              font-size: 13px;
+              line-height: 15px;
+              text-decoration-line: underline;
+              color: $color-hover-for-dark;
+              transition: opacity .4s ease-in-out;
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}

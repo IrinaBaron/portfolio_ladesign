@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ladesign - contacts</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-favicon.png">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <header class="header color-header">
+    @@include('partials/header-contacts.html')
+  </header>
+  <main>
+    <section class="contacts-hero">
+      <div class="container contacts-hero__container">
+        <h2 class="contacts-hero__title">Контакты</h2>
+        <div class="contacts-hero__wrap">
+          <div class="contacts-hero__wrap-form">
+            <h3 class="contacts-hero__subtitle">Напишите нам</h3>
+            <p class="contacts-hero__text">Мы всегда рады ответить на интересующие  вас вопросы. Заполните форму и наш специалист свяжется с вами.</p>
+            <form class="contacts-hero__form" action="">
+              <ul class="contacts-hero__list">
+                <li class="contacts-hero__item">
+                  <label class="contacts-hero__label" for="name"></label>
+                  <input class="contacts-hero__input" type="text" id="name" name="name" placeholder="Ваше имя">
+                </li>
+                <li class="contacts-hero__item">
+                  <label class="contacts-hero__label" for="email"></label>
+                  <input class="contacts-hero__input" type="email" id="email" name="email" placeholder="Ваша эл.почта">
+                </li>
+                <li class="contacts-hero__item">
+                  <label class="contacts-hero__label" for="question"></label>
+                  <input class="contacts-hero__input" type="text" id="question" name="question" placeholder="Ваш вопрос">
+                </li>
+              </ul>
+              <div class="contacts-hero__send-box">
+                <button class="contacts-hero__send-btn btn btn-color">отправить</button>
+                <span class="contacts-hero__send-span">Нажимая на кнопку, я даю <a class="contacts-hero__send-link" href="#">согласие на обработку персональных данных</a></span>
+              </div>
+            </form>
+          </div>
+          <div class="contacts-hero__box">
+            <h3 class="contacts-hero__subtitle">Наши контакты</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    @@include('partials/footer.html')
+  </footer>
+</body>
+</html>
