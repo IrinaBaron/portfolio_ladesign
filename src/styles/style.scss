@@ -1444,9 +1444,8 @@ button {
   }
   .contacts-hero__wrap {
     display: flex;
-    justify-content: space-between;
     .contacts-hero__wrap-form {
-      margin-right: 10px;
+      margin-right: 205px;
       max-width: 513px;
       .contacts-hero__text {
         margin-bottom: 27px;
@@ -1506,6 +1505,42 @@ button {
               }
             }
           }
+        }
+      }
+    }
+    .contacts-hero__box {
+      .contacts-hero__box-list {
+        max-width: 241px;
+        .contacts-hero__box-item {
+          padding-left: 40px;
+          background-position: left top;
+          background-repeat: no-repeat;
+          &:not(:last-child) {
+            margin-bottom: 25px;
+          }
+          .contacts-hero__box-text {
+            font-family: 'Roboto';
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            color: $color-priority;
+          }
+          .box-link {
+            font-weight: 400;
+            text-decoration-line: underline;
+          }
+        }
+        .box-phone {
+          background-image: url('../images/icons/icon_phon-contacts.svg');
+        }
+        .box-mail {
+          background-image: url('../images/icons/Icon_mail.svg');
+        }
+        .box-time {
+          background-image: url('../images//icons/Icon_clock.svg');
+        }
+        .box-address {
+          background-image: url('../images/icons/icon_location.svg');
         }
       }
     }
