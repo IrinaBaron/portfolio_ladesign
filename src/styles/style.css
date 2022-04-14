@@ -1553,13 +1553,10 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form {
-  margin-right: 10px;
+  margin-right: 205px;
   max-width: 513px;
 }
 
@@ -1643,5 +1640,49 @@ button {
 
 .contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__send-box .contacts-hero__send-span .contacts-hero__send-link:hover {
   opacity: 0.8;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list {
+  max-width: 241px;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list .contacts-hero__box-item {
+  padding-left: 40px;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list .contacts-hero__box-item:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list .contacts-hero__box-item .contacts-hero__box-text {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #777777;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list .contacts-hero__box-item .box-link {
+  font-weight: 400;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list .box-phone {
+  background-image: url("../images/icons/icon_phon-contacts.svg");
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list .box-mail {
+  background-image: url("../images/icons/Icon_mail.svg");
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list .box-time {
+  background-image: url("../images//icons/Icon_clock.svg");
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__box .contacts-hero__box-list .box-address {
+  background-image: url("../images/icons/icon_location.svg");
 }
 /*# sourceMappingURL=style.css.map */
