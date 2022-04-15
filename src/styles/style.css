@@ -1580,11 +1580,27 @@ button {
 }
 
 .contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item {
+  position: relative;
   margin-bottom: 40px;
+  padding-top: 15px;
 }
 
 .contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item:last-child {
   margin-bottom: 44px;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item .contacts-hero__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #ADADAD;
+  opacity: 0;
+  -webkit-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
 }
 
 .contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item .contacts-hero__input {
@@ -1593,6 +1609,15 @@ button {
   width: 100%;
   border: 1px solid transparent;
   border-bottom: 1px solid #777777;
+  opacity: 1;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item .contacts-hero__input.focus-visible {
+  border-bottom: 2px solid #393246;
+}
+
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__list .contacts-hero__item .contacts-hero__input.focus-visible ~ .contacts-hero__label {
+  opacity: 1;
 }
 
 .contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__send-box {
