@@ -1460,15 +1460,38 @@ button {
         flex-direction: column;
         .contacts-hero__list {
           .contacts-hero__item {
-            margin-bottom: 40px;&:last-child {
+            position: relative;
+            margin-bottom: 40px;
+            padding-top: 15px;
+            &:last-child {
               margin-bottom: 44px;
             }
+            .contacts-hero__label {
+              position: absolute;
+              top: 0;
+              left: 0;
+              font-family: 'Roboto';
+              font-weight: 400;
+              font-size: 13px;
+              line-height: 15px;
+              color: #ADADAD;
+              opacity: 0;
+              transition: opacity .4s ease-in-out;
+            }
+            
             .contacts-hero__input {
               padding: 5px;
               padding-left: 0px;
               width: 100%;
               border: 1px solid transparent;
               border-bottom: 1px solid $color-priority;
+              opacity: 1;
+              &.focus-visible {
+                border-bottom: 2px solid $color-hover-for-dark;
+              }
+              &.focus-visible ~ .contacts-hero__label {
+                opacity: 1;
+              }
             }
           }
         }
