@@ -1620,6 +1620,20 @@ button {
   opacity: 1;
 }
 
+.contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__input-add {
+  height: auto;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #777777;
+  border: none;
+  background-color: transparent;
+  background-image: url("../images/icons/icon_Attach.svg");
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
 .contacts-hero__container .contacts-hero__wrap .contacts-hero__wrap-form .contacts-hero__form .contacts-hero__send-box {
   display: -webkit-box;
   display: -ms-flexbox;
