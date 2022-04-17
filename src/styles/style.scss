@@ -1495,19 +1495,25 @@ button {
             }
           }
         }
-        .contacts-hero__input-add {
-          height: auto;
+        .contacts-hero__label-file {
+          display: flex;
+          margin-bottom: 30px;
           font-family: 'Roboto';
           font-weight: 700;
           font-size: 16px;
           line-height: 24px;
           color: $color-priority;
           border: none;
-          background-color: transparent;
-          background-image: url('../images/icons/icon_Attach.svg');
-          background-position: left;
-          background-repeat: no-repeat;
+          cursor: pointer;
+          .contacts-hero__span {
+            display: inline-block;
+            margin-right: 10px;
+          }
+          .contacts-hero__input-add {
+            display: none;
+          }
         }
+        
         .contacts-hero__send-box {
           display: flex;
           justify-content: space-between;
