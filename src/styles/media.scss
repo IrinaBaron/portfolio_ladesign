@@ -74,6 +74,13 @@ $color-active-btn: #63557C;
     }
   }
 
+  .contacts-hero__container {
+    .contacts-hero__wrap {
+      .contacts-hero__wrap-form {
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 @media (max-width: 1023px) {
@@ -549,6 +556,35 @@ $color-active-btn: #63557C;
       .swiper-button-next,
       .swiper-button-prev {
         display: none;
+      }
+    }
+  }
+
+  .contacts-hero__container {
+    .contacts-hero__wrap {
+      flex-direction: column;
+      .contacts-hero__wrap-form {
+        margin-right: 0;
+        margin-bottom: 70px;
+        max-width: 100%;
+      }
+      .contacts-hero__box {
+        .contacts-hero__box-list {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 535px;
+          .contacts-hero__box-item {
+            &:not(:nth-child(2n)) {
+              margin-right: 60px;
+            }
+          }
+          .contacts-hero__box-item.box-phone {
+            margin-right: 83px;
+          }
+          .box-address {
+            max-width: 241px;
+          }
+        }
       }
     }
   }

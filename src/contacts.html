@@ -38,7 +38,13 @@
                   <label class="contacts-hero__label" for="question">Ваш вопрос</label>
                 </li>
               </ul>
-              <input class="contacts-hero__input-add" type="file" placeholder="Прикрепить файл" method="POST">
+              <label class="contacts-hero__label-file" for="file">
+                <span class="contacts-hero__span">
+                  <img src="./images/icons/icon_Attach.svg" aria-hidden="true" alt="">
+                </span>
+                Прикрепить файл
+                <input class="contacts-hero__input-add" id="file" type="file" placeholder="Прикрепить файл" method="POST">
+              </label>
               <div class="contacts-hero__send-box">
                 <button class="contacts-hero__send-btn btn btn-color">отправить</button>
                 <span class="contacts-hero__send-span">Нажимая на кнопку, я даю <a class="contacts-hero__send-link" href="#">согласие на обработку персональных данных</a></span>
