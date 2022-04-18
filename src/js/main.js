@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    openModal();
+    try {
+      openModal();
+    } catch (error) {
+      console.log(error)
+    }
+    
     // ----------burger-menu 
 
-    const burgerBtn = document.querySelector('.header__burger')
+    const burgerBtn = document.querySelector('.header__burger');
 
     burgerBtn.addEventListener('click', clickBurger);
     burgerBtn.addEventListener('keyup', (e) => {
