@@ -752,10 +752,30 @@ $color-active-btn: #63557C;
     }
   }
 
+  .contacts-hero__container {
+    .contacts-hero__title {
+      margin-bottom: 50px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    .contacts-hero__subtitle {
+      margin-bottom: 19px;
+      font-size: 20px;
+      line-height: 25px;
+    }
+    .contacts-hero__wrap {
+      .contacts-hero__wrap-form {
+        .contacts-hero__text {
+          margin-bottom: 30px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 570px) {
-
 
   .team__container {
     position: relative;
@@ -960,6 +980,29 @@ $color-active-btn: #63557C;
       line-height: 19px;
       background-position: right 2px top 0;
       background-size: 28px;
+    }
+  }
+
+  .contacts-hero__container {
+    padding-top: 120px;
+    .contacts-hero__wrap {
+      .contacts-hero__wrap-form {
+        .contacts-hero__form {
+          .contacts-hero__send-box {
+            flex-direction: column;
+            .contacts-hero__send-btn {
+              margin-right: 0;
+              margin-bottom: 20px;
+              width: 100%;
+            }
+            
+          }
+          .contacts-hero__label-file {
+            margin-bottom: 20px;
+            font-weight: 300;
+          }
+        }
+      }
     }
   }
 }
