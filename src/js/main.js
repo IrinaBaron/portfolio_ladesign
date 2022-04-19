@@ -5,7 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (error) {
       console.log(error)
     }
-    
+
+    try {
+      let events = document.querySelectorAll('.portfolio__item');
+      events.forEach(event => {
+        event.addEventListener('click', e => {
+          window.location.href = 'loft.html';
+        })
+        event.addEventListener('keyup', e => {
+          if (e.code == 'Enter') {
+            window.location.href = 'loft.html';
+          }
+        })
+      })
+    } catch (error) {
+      console.log(error)
+    }
+
     // ----------burger-menu 
 
     const burgerBtn = document.querySelector('.header__burger');
@@ -150,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-    
+
 
     // let closeInfo = document.querySelector('.contacts__close');
 
