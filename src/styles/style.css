@@ -610,6 +610,7 @@ button {
 
 .portfolio__container .portfolio__list .portfolio__item {
   position: relative;
+  cursor: pointer;
 }
 
 .portfolio__container .portfolio__list .portfolio__item .portfolio__img {
