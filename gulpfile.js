@@ -7,7 +7,6 @@ import pkg from 'gulp';
 const { src, dest } = pkg1;
 import pkg1 from 'gulp';
 import concat from 'gulp-concat';
-
 import fileinclude from 'gulp-file-include';
 import htmlMin from 'gulp-htmlmin';
 import autoprefixes from 'gulp-autoprefixer';

@@ -118,4 +118,25 @@
   line-height: 24px;
   color: #777777;
 }
+
+.swiper-loft .swiper-loft__container .swiper-loft__swiper {
+  height: 741px;
+}
+
+.swiper-loft .swiper-loft__container .swiper-loft__swiper .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 700px;
+}
+
+.swiper-loft .swiper-loft__container .swiper-loft__swiper .swiper-wrapper .swiper-slide {
+  width: 100%;
+  height: 700px;
+}
+
+.swiper-loft .swiper-loft__container .swiper-loft__swiper .swiper-wrapper .swiper-slide .price-project__img {
+  width: 100%;
+  height: 700px;
+}
 /*# sourceMappingURL=loft.css.map */

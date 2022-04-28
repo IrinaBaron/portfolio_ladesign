@@ -518,6 +518,9 @@
   .price-project__container .price-project__swiper .swiper-button-prev {
     display: none;
   }
+  .contacts-hero__container {
+    padding-top: 175px;
+  }
   .contacts-hero__container .contacts-hero__wrap {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

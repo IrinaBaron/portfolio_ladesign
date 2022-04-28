@@ -100,3 +100,24 @@ $color-active-btn: #63557C;
     }
   }
 }
+
+.swiper-loft {
+  .swiper-loft__container {
+    .swiper-loft__swiper {
+      height: 741px;
+      .swiper-wrapper {
+        display: flex;
+        height: 700px;
+        .swiper-slide {
+          width: 100%;
+          height: 700px;
+          .swiper-loft__img {
+            width: 100%;
+            height: 700px;
+          }
+        }
+      }
+      
+    }
+  }
+}

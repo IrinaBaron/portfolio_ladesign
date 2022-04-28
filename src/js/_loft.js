@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 1,
       spaceBetween: 30,
       pagination: {
-        el: '.price-project__swiper .swiper-pagination',
+        el: '.swiper-loft__swiper .swiper-pagination',
         type: 'bullets',
         clickable: true,
       },
       navigation: {
-        nextEl: '.price-project__swiper .swiper-button-next',
-        prevEl: '.price-project__swiper .swiper-button-prev',
+        nextEl: '.swiper-loft__swiper .swiper-button-next',
+        prevEl: '.swiper-loft__swiper .swiper-button-prev',
       },
       a11y: {
         prevSlideMessage: 'Previous slide',
