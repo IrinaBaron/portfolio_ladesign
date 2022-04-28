@@ -43,103 +43,108 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // -------------team
-    let teamBtns = document.querySelectorAll('.team__btn');
-    let contents = document.querySelectorAll('.team__content');
+    try {
+      let teamBtns = document.querySelectorAll('.team__btn');
+      let contents = document.querySelectorAll('.team__content');
 
-    // document.body.addEventListener('click', e => {
-    //   console.log(e.target);
-    // })
-    teamBtns.forEach(btn => {
-      btn.addEventListener('click', e => {
-        if (e.target.closest('.show')) {
-          e.target.classList.remove('show');
-          e.target.nextElementSibling.classList.remove('show');
-        } else {
-          for (let i = 0; i < teamBtns.length; i++) {
-            if (teamBtns[i].classList.contains('show')) {
-              teamBtns[i].classList.remove('show');
-              contents[i].classList.remove('show');
+      teamBtns.forEach(btn => {
+        btn.addEventListener('click', e => {
+          if (e.target.closest('.show')) {
+            e.target.classList.remove('show');
+            e.target.nextElementSibling.classList.remove('show');
+          } else {
+            for (let i = 0; i < teamBtns.length; i++) {
+              if (teamBtns[i].classList.contains('show')) {
+                teamBtns[i].classList.remove('show');
+                contents[i].classList.remove('show');
+              }
             }
+            e.target.classList.toggle('show');
+            e.target.nextElementSibling.classList.toggle('show');
           }
-          e.target.classList.toggle('show');
-          e.target.nextElementSibling.classList.toggle('show');
-        }
+        })
+        return
       })
-      return
-    })
+    } catch (error) {
+      console.log(error)
+    }
 
     // -------------portfolio
-    let elements = document.querySelectorAll('.portfolio__item');
+    try {
+      let elements = document.querySelectorAll('.portfolio__item');
 
-    document.querySelector('.num-all').textContent = elements.length;
-    let aparts = document.querySelectorAll('.apart');
-    document.querySelector('.num-appart').textContent = aparts.length;
-    let houses = document.querySelectorAll('.home');
-    document.querySelector('.num-home').textContent = houses.length;
-    let commercial = document.querySelectorAll('.commerc');
-    document.querySelector('.num-commerc').textContent = commercial.length;
-    const btnShowMore = document.querySelector('.portfolio__btn');
+      document.querySelector('.num-all').textContent = elements.length;
+      let aparts = document.querySelectorAll('.apart');
+      document.querySelector('.num-appart').textContent = aparts.length;
+      let houses = document.querySelectorAll('.home');
+      document.querySelector('.num-home').textContent = houses.length;
+      let commercial = document.querySelectorAll('.commerc');
+      document.querySelector('.num-commerc').textContent = commercial.length;
+      const btnShowMore = document.querySelector('.portfolio__btn');
 
-    function hideElements(value) {
-      for (let i = value; i < elements.length; i++) {
-        let elem = elements[i];
-        elem.style.display = 'none';
-      }
-      return
-    }
-    hideElements(10);
-
-    if (document.documentElement.clientWidth <= 767) {
-      hideElements(7);
-    }
-
-    let btnsShowAll = document.querySelectorAll('.btns-list__btn');
-
-    btnsShowAll.forEach(btn => {
-      btn.addEventListener('click', e => {
-        elements.forEach(elem => {
+      function hideElements(value) {
+        for (let i = value; i < elements.length; i++) {
+          let elem = elements[i];
           elem.style.display = 'none';
-        })
-        if (e.target.classList.contains('apart-elems')) {
-          let aparts = document.querySelectorAll('.apart');
-          aparts.forEach(apart => {
-            apart.style.display = 'block';
+        }
+        return
+      }
+      hideElements(10);
 
-          })
-          // document.querySelector('.item4').style.gridColumn = '5/7';
-          return
-        }
-        if (e.target.classList.contains('home-elems')) {
-          let houses = document.querySelectorAll('.home');
-          houses.forEach(house => {
-            house.style.display = 'block';
-          })
-          return
-        }
-        if (e.target.classList.contains('commerc-elems')) {
-          let elems = document.querySelectorAll('.commerc');
-          elems.forEach(elem => {
-            elem.style.display = 'block';
-          })
-          return
-        }
-        if (e.target.classList.contains('all-elems')) {
+      if (document.documentElement.clientWidth <= 767) {
+        hideElements(7);
+      }
+
+      let btnsShowAll = document.querySelectorAll('.btns-list__btn');
+
+      btnsShowAll.forEach(btn => {
+        btn.addEventListener('click', e => {
           elements.forEach(elem => {
-            elem.style.display = 'block';
+            elem.style.display = 'none';
           })
-          hideElements();
-          // document.querySelector('.item4').style.gridColumn = '7/9';
-          return
-        }
-        // let elems = document.querySelectorAll(`.${direct}`);
-      })
-    })
+          if (e.target.classList.contains('apart-elems')) {
+            let aparts = document.querySelectorAll('.apart');
+            aparts.forEach(apart => {
+              apart.style.display = 'block';
 
-    btnShowMore.addEventListener('click', e => {
-      elements.forEach(elem => {
-        elem.style.display = 'block';
+            })
+            // document.querySelector('.item4').style.gridColumn = '5/7';
+            return
+          }
+          if (e.target.classList.contains('home-elems')) {
+            let houses = document.querySelectorAll('.home');
+            houses.forEach(house => {
+              house.style.display = 'block';
+            })
+            return
+          }
+          if (e.target.classList.contains('commerc-elems')) {
+            let elems = document.querySelectorAll('.commerc');
+            elems.forEach(elem => {
+              elem.style.display = 'block';
+            })
+            return
+          }
+          if (e.target.classList.contains('all-elems')) {
+            elements.forEach(elem => {
+              elem.style.display = 'block';
+            })
+            hideElements();
+            // document.querySelector('.item4').style.gridColumn = '7/9';
+            return
+          }
+          // let elems = document.querySelectorAll(`.${direct}`);
+        })
       })
-    })
+
+      btnShowMore.addEventListener('click', e => {
+        elements.forEach(elem => {
+          elem.style.display = 'block';
+        })
+      })
+    } catch (error) {
+      console.log(error)
+    }
 
 
     //--------------modal
@@ -268,7 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         btnScroll.style.display = 'none';
       }
-      if (document.querySelector('.header').classList.contains('portfolio-header')) {
+      if (document.querySelector('.header').classList.contains('portfolio-header') 
+      || document.querySelector('.header').classList.contains('price-header')
+      || document.querySelector('.header').classList.contains('contacts-header')) {
         return
       }
       createScroll(150, scrollNum);
@@ -290,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function createScroll(num, scrollNum) {
-
       if (scrollNum >= num) {
         document.querySelector('.header').classList.add('color-header');
       } else {

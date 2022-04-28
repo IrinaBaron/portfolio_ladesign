@@ -1,15 +1,12 @@
 'use strict';
 // import { src, dest, series, watch, parallel } from 'gulp';
 
-
-
 import gulp from 'gulp';
 const { series, parallel } = pkg;
 import pkg from 'gulp';
 const { src, dest } = pkg1;
 import pkg1 from 'gulp';
 import concat from 'gulp-concat';
-
 import fileinclude from 'gulp-file-include';
 import htmlMin from 'gulp-htmlmin';
 import autoprefixes from 'gulp-autoprefixer';
@@ -17,8 +14,8 @@ import cleanCSS from 'gulp-clean-css';
 import svgSprite from 'gulp-svg-sprite';
 import image from 'gulp-image';
 import babel from 'gulp-babel';
-import uglify from 'gulp-uglify-es';
-import { onError } from 'gulp-notify';
+import terser from 'gulp-terser';
+import rename from 'gulp-rename';
 const { init, write } = pkg2;
 import pkg2 from 'gulp-sourcemaps';
 import del from 'del';
@@ -43,7 +40,7 @@ const resources = () => {
 }
 
 const styles = async () => {
-  return src(['src/styles/normalize.css','src/styles/style.scss','src/styles/*.scss','src/styles/media.scss'])
+  return src(['src/styles/normalize.css', 'src/styles/style.scss', 'src/styles/*.scss', 'src/styles/media.scss'])
     .pipe(pkg2.init())
     .pipe(pkg2.write())
     .pipe(sass().on('error', sass.logError))
@@ -55,9 +52,9 @@ const styles = async () => {
 
 const html = async () => {
   return src('src/**/*.html')
-  .pipe(fileinclude())
-  .pipe(dest('dist'))
-  .pipe(browserSync.stream())
+    .pipe(fileinclude())
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream())
 }
 
 const htmlMinify = async () => {
@@ -90,7 +87,7 @@ const scripts = async () => {
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    // .pipe(uglify().on('error', onError()))
+    // .pipe(terser())
     .pipe(write())
     .pipe(concat('app.js'))
     .pipe(dest('dist/js'))
@@ -99,7 +96,7 @@ const scripts = async () => {
 
 const fonts = () => {
   return src(['src/fonts/**/*.woff', 'src/fonts/**/*.woff2'])
-  .pipe(dest('dist/fonts'))
+    .pipe(dest('dist/fonts'))
 }
 
 const images = () => {
@@ -121,8 +118,8 @@ const prebuild = async function () {
     .pipe(dest('dist'))
   const resource = src('src/resources/**')
   //   .pipe(dest('dist'))
-  const css = src(['src/styles/normalize.css','src/styles/style.scss','src/styles/*.scss','src/styles/media.scss'])
-  .pipe(sass().on('error', sass.logError))
+  const css = src(['src/styles/normalize.css', 'src/styles/style.scss', 'src/styles/*.scss', 'src/styles/media.scss'])
+    .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.css'))
     .pipe(autoprefixes({
       cascade: false
@@ -131,7 +128,7 @@ const prebuild = async function () {
       level: 2
     }))
     .pipe(dest('dist/styles'))
-  
+
 }
 
 const buildM = async function () {
@@ -139,14 +136,19 @@ const buildM = async function () {
     'src/js/**/*.js',
     'src/js/main.js'
   ])
-    .pipe(concat('app.js'))
-    .pipe(dest('dist/js'))
+  .pipe(concat('app.js'))
+  .pipe(dest('dist/js'))
+  .pipe(rename({ extname: '.min.js' }))
+  .pipe(terser())
+  .pipe(write())
+  .pipe(concat('app.js'))
+  .pipe(dest('dist/js'))
   const spritesSvg = src('src/images/svg/**/*.svg')
     .pipe(dest('dist/images'))
   const fnt = src(['src/fonts/**/*.woff', 'src/fonts/**/*.woff2'])
     .pipe(dest('dist/fonts'))
-    // return src(['src/fonts/**/*.woff'])
-    // .pipe(dest('dist/fonts'))
+  // return src(['src/fonts/**/*.woff'])
+  // .pipe(dest('dist/fonts'))
 }
 
 const watchFiles = async () => {
