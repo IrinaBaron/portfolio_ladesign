@@ -148,8 +148,8 @@
           transform: rotate(180deg);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  -webkit-transition: background-color .4s ease-in-out, background-color .4s ease-in-out;
-  transition: background-color .4s ease-in-out, background-color .4s ease-in-out;
+  -webkit-transition: background-color .4s ease-in-out, background-color .4s ease-in-out, border-width .4s linear;
+  transition: background-color .4s ease-in-out, background-color .4s ease-in-out, border-width .4s linear;
 }
 
 .swiper-loft .swiper-loft__container .swiper-loft__swiper .swiper-button-prev:hover, .swiper-loft .swiper-loft__container .swiper-loft__swiper .swiper-button-prev.focus-visible {
@@ -170,8 +170,8 @@
   background-repeat: no-repeat;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  -webkit-transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
-  transition: background-image .4s ease-in-out, background-color .4s ease-in-out;
+  -webkit-transition: background-image .4s ease-in-out, background-color .4s ease-in-out, border-width .4s linear;
+  transition: background-image .4s ease-in-out, background-color .4s ease-in-out, border-width .4s linear;
 }
 
 .swiper-loft .swiper-loft__container .swiper-loft__swiper .swiper-button-next:hover, .swiper-loft .swiper-loft__container .swiper-loft__swiper .swiper-button-next.focus-visible {
@@ -279,11 +279,90 @@
   max-width: 483px;
 }
 
-.image {
+.task .image-img {
   width: 100%;
 }
 
-.image .image-img {
-  width: 100%;
+.features .features__container {
+  padding-top: 100px;
+  padding-bottom: 75px;
+}
+
+.features .features__container .features__title {
+  margin-bottom: 24px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.features .features__container .features__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.features .features__container .features__list .features__item {
+  max-width: 585px;
+}
+
+.features .features__container .features__list .features__item .features__text {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #777777;
+}
+
+.features .features__container .features__list .features__item:nth-child(1) {
+  margin-right: 30px;
+  margin-bottom: 23px;
+}
+
+.features .features__container .features__images {
+  display: -ms-grid;
+  display: grid;
+  gap: 30px;
+}
+
+.features .features__container .features__images .box1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.features .features__container .features__images .box2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.features .features__container .features__images .box3 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.features .features__container .features__images .box4 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
 }
 /*# sourceMappingURL=loft.css.map */
