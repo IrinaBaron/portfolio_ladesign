@@ -1440,24 +1440,24 @@ button {
   text-align: center;
 }
 
-.price-project__container .price-project__swiper {
+.price-project__swiper {
   margin-bottom: 130px;
 }
 
-.price-project__container .price-project__swiper .swiper-wrapper {
+.price-project__swiper .swiper-wrapper {
   margin-bottom: 40px;
 }
 
-.price-project__container .price-project__swiper .swiper-wrapper .swiper-slide .price-project__img {
+.price-project__swiper .swiper-wrapper .swiper-slide .price-project__img {
   max-height: 270px;
 }
 
-.price-project__container .price-project__swiper .swiper-button-next::after,
-.price-project__container .price-project__swiper .swiper-button-prev::after {
+.price-project__swiper .swiper-button-next::after,
+.price-project__swiper .swiper-button-prev::after {
   content: '';
 }
 
-.price-project__container .price-project__swiper .swiper-button-prev {
+.price-project__swiper .swiper-button-prev {
   top: 43%;
   left: 30px;
   width: 40px;
@@ -1476,12 +1476,12 @@ button {
   transition: background-color .4s ease-in-out, background-color .4s ease-in-out;
 }
 
-.price-project__container .price-project__swiper .swiper-button-prev:hover, .price-project__container .price-project__swiper .swiper-button-prev.focus-visible {
+.price-project__swiper .swiper-button-prev:hover, .price-project__swiper .swiper-button-prev.focus-visible {
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #FFFFFF;
 }
 
-.price-project__container .price-project__swiper .swiper-button-next {
+.price-project__swiper .swiper-button-next {
   top: 43%;
   right: 30px;
   width: 40px;
@@ -1498,12 +1498,12 @@ button {
   transition: background-image .4s ease-in-out, background-color .4s ease-in-out, border-width .4s linear;
 }
 
-.price-project__container .price-project__swiper .swiper-button-next:hover, .price-project__container .price-project__swiper .swiper-button-next.focus-visible {
+.price-project__swiper .swiper-button-next:hover, .price-project__swiper .swiper-button-next.focus-visible {
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid #FFFFFF;
 }
 
-.price-project__container .price-project__swiper .swiper-pagination {
+.price-project__swiper .swiper-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1515,7 +1515,7 @@ button {
           align-items: center;
 }
 
-.price-project__container .price-project__swiper .swiper-pagination-bullet {
+.price-project__swiper .swiper-pagination-bullet {
   margin: 0;
   width: 158px;
   height: 1px;
@@ -1526,7 +1526,7 @@ button {
   transition: height .4s ease-in-out, background-color .4s ease-in-out, border-width .4s linear;
 }
 
-.price-project__container .price-project__swiper .swiper-pagination-bullet-active {
+.price-project__swiper .swiper-pagination-bullet-active {
   height: 3px;
   background-color: #393246;
 }

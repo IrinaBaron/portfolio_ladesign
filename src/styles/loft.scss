@@ -311,3 +311,20 @@ $color-active-btn: #63557C;
     }
   }
 }
+
+.similar {
+  .similar__container {
+    padding-top: 75px;
+    padding-bottom: 130px;
+    text-align: center;
+    .similar__title {
+      margin-bottom: 50px;
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 45px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $color-priority;
+    }
+  }
+}
