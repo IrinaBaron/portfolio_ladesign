@@ -1351,6 +1351,8 @@ button {
 
     .swiper-slide {
       .price-project__img {
+        width: 100%;
+        height: auto;
         max-height: 270px;
       }
     }

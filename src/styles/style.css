@@ -1449,6 +1449,8 @@ button {
 }
 
 .price-project__swiper .swiper-wrapper .swiper-slide .price-project__img {
+  width: 100%;
+  height: auto;
   max-height: 270px;
 }
 
